@@ -1,23 +1,86 @@
----
-layout: default
-title: Neuroscience Knowledge Engine
-description: A computational knowledge engine for human neuroscience
-keywords: neuroscience, neuroimaging, fmri, pet, psychology
-url: https://nke-viewer.github.io
-<!-- custom_css: index.css -->
-<!-- custom_js: index.js -->
----
+<html>
 
-<!-- Header -->
+<head>
+    <link href="css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="js/panzoom.js" type="text/javascript"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/xtk.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/rainbow.js" type="text/javascript"></script>
+    <script src="js/sylvester.js" type="text/javascript"></script>
+    <script src="js/amplify.min.js" type="text/javascript"></script>
+    <script src="js/viewer.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+</head>
 
-<div class="section grey">
-    <div class="Grid container">
-        <div id="philosophy-text" class="Grid-cell u-size4of6 u-before1of6 u-after1of6">
-            <h1 class="small-title center-text mega-margin">Select the number of domains:</h1>
-            <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button><br/>
-            <button>8</button><button>9</button><button>10</button><button>11</button><button>12</button><button>13</button><br/>
-            <button>14</button><button>15</button><button>16</button><button>17</button><button>18</button><button>19</button><br/>
-            <button>20</button><button>21</button><button>22</button><button>23</button><button>24</button><button>25</button>
+<style>
+
+    button {
+        width: 30px;
+        margin: 5px;
+        text-align: center;
+    }
+
+</style>
+
+<body>
+
+<center>
+
+<div>
+    <div>
+        <div>
+            <h1>Number of domains:</h1>
+            <button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button><button>8</button><button>9</button><button>10</button><button>11</button><button>12</button><button>13</button><br/>
+            <button>14</button><button>15</button><button>16</button><button>17</button><button>18</button><button>19</button><button>20</button><button>21</button><button>22</button><button>23</button><button>24</button><button>25</button><br/>
         </div>
     </div>
 </div>
+<br/>
+
+<div class='container'>
+
+<div class='row'>
+    <div class='col-md-10 col-md-offset-1'>
+        <div id="views_left">
+            <div class='view' id='view_coronal'>
+                <canvas height='220' id='cor_canvas' width='220'></canvas>
+                <div class='slider nav-slider-vertical' id='nav-yaxis'></div>
+            </div>
+            <div class='view' id='view_axial'>
+                <canvas height='264' id='axial_canvas' width='220'></canvas>
+                <div class='slider nav-slider-vertical' id='nav-zaxis'></div>
+            </div>
+        </div>
+        <div id="views_right">
+            <div class='view' id='view_sagittal'>
+                <canvas height='220' id='sag_canvas' width='264'></canvas>
+                <div class='slider nav-slider-horizontal' id='nav-xaxis'></div>
+            </div>
+        </div>
+
+<!--         <div id="layer_panel">
+            <div id="layer_list_panel">
+                <div>Layers</div>
+                <div id="layer_visible_list"></div>
+                <ul id="layer_list" class="layer_settings">
+                </ul>
+            </div>
+            <div id="layer_settings_panel">
+                Color palette:<select id="select_color" class="layer_settings"></select>
+                Opacity:<div class='slider layer_settings' id='opacity'></div>
+                Pos. threshold:<div class='slider layer_settings' id='pos-threshold'></div>
+            </div>
+        </div> -->
+    </div>
+</div>
+</div>
+
+</center>
+
+</body>
+
+</html>
