@@ -14,9 +14,7 @@ function loadWordCloud(n_domains) {
 
     document.getElementById("chart").innerHTML = "";
 
-    d3.csv("/data/k" + pad(n_domains) + "/words_k" + pad(n_domains) + ".csv", function(data) {
-
-        // n_domains = data[data.length - 1]["CLUSTER"];
+    d3.csv("data/k" + pad(n_domains) + "/words_k" + pad(n_domains) + ".csv", function(data) {
 
         if (n_domains > 0) {
             for (i = 0; i < n_domains; i++) {
