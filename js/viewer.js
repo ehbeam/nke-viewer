@@ -1129,15 +1129,25 @@
       }
     };
 
+    var layerColors = ["#E2E2E2", "rgba(117, 151, 208, 0.5)", "rgba(176, 126, 182, 0.5)", "rgba(206, 190, 109, 0.5)", "rgba(119, 181, 138, 0.5)", "rgba(206, 125, 105, 0.5)", 
+                       "rgba(125, 116, 163, 0.5)", "rgba(174, 200, 124, 0.5)", "rgba(186, 126, 57, 0.5)", "rgba(207, 117, 147, 0.5)", "rgba(132, 107, 67, 0.5)", 
+                       "rgba(98, 177, 178, 0.5)", "rgba(140, 64, 88, 0.5)", "rgba(216, 174, 84, 0.5)", "rgba(90, 168, 167, 0.5)", "rgba(58, 60, 124, 0.5)", 
+                       "rgba(255, 123, 91, 0.5)", "rgba(114, 102, 42, 0.5)", "rgba(145, 229, 128, 0.5)", "rgba(188, 213, 255, 0.5)", "rgba(226, 145, 221, 0.5)",
+                       "rgba(139, 117, 234, 0.5)", "rgba(224, 189, 132, 0.5)", "rgba(214, 79, 124, 0.5)", "rgba(164, 234, 202, 0.5)"];
+
     UserInterface.prototype.updateLayerList = function(layers, selectedIndex) {
       var deletion_icon, download_icon, i, l, visibility_icon, _i, _ref;
+      var layerIndex = 0;
+      var kLayerColors = layerColors.slice(0, layers.length).reverse() 
       $(this.layerListId).empty();
       for (i = _i = 0, _ref = layers.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
         l = layers[i];
         visibility_icon = this.viewSettings.visibilityIconEnabled ? "<div class='visibility_icon' title='Hide/show image'><span class='glyphicon glyphicon-eye-open'></i></div>" : '';
         deletion_icon = this.viewSettings.deletionIconEnabled ? "<div class='deletion_icon' title='Remove this layer'><span class='glyphicon glyphicon-trash'></i></div>" : '';
         download_icon = l.download ? "<div class='download_icon' title='Download this image'><span class='glyphicon glyphicon-save'></i></div>" : '';
-        $(this.layerListId).append($(("<li class='layer_list_item'>" + visibility_icon + "<div class='layer_label'>") + l.name + ("</div>" + deletion_icon + download_icon + "</li>")));
+        layerColor = kLayerColors[layerIndex];
+        layerIndex = layerIndex + 1;
+        $(this.layerListId).append($(("<li class='layer_list_item'>" + visibility_icon + "<div class='layer_label' style='background:" + layerColor + "'>") + l.name + ("</div>" + deletion_icon + download_icon + "</li>")));
       }
       $('.layer_label').click((function(_this) {
         return function(e) {
@@ -1264,9 +1274,9 @@
     function ViewSettings(options) {
       this.settings = {
         panzoomEnabled: false,
-        crosshairsEnabled: true,
+        crosshairsEnabled: false,
         crosshairsWidth: 1,
-        crosshairsColor: 'lime',
+        crosshairsColor: 'white',
         labelsEnabled: true,
         visibilityIconEnabled: true,
         deletionIconEnabled: true
@@ -1530,8 +1540,8 @@
   Crosshairs = (function() {
     function Crosshairs(visible, color, width) {
       this.visible = visible != null ? visible : true;
-      this.color = color != null ? color : 'lime';
-      this.width = width != null ? width : 1;
+      this.color = color != null ? color : 'red';
+      this.width = width != null ? width : 2;
     }
 
     return Crosshairs;
@@ -1553,9 +1563,30 @@
     }
 
     $.extend(ColorMap.PALETTES, {
-      'intense red-blue': ['#053061', '#2166AC', '#4393C3', '#F7F7F7', '#D6604D', '#B2182B', '#67001F'],
-      'red-yellow-blue': ['#313695', '#4575B4', '#74ADD1', '#FFFFBF', '#F46D43', '#D73027', '#A50026'],
-      'brown-teal': ['#003C30', '#01665E', '#35978F', '#F5F5F5', '#BF812D', '#8C510A', '#543005']
+      'nke_red': ['#CE7D69', '#CE7D69'],
+      'nke_orange': ['#BA7E39', '#BA7E39'], 
+      'nke_yellow': ['#CEBE6D', '#CEBE6D'],
+      'nke_chartreuse': ['#AEC87C', '#AEC87C'],
+      'nke_green': ['#77B58A', '#77B58A'], 
+      'nke_blue': ['#7597D0', '#7597D0'],
+      'nke_magenta': ['#B07EB6', '#B07EB6'],
+      'nke_purple': ['#7D74A3', '#7D74A3'], 
+      'nke_brown': ['#846B43', '#846B43'],
+      'nke_pink': ['#CF7593', '#CF7593'],
+      'nke_cyan': ['#62B1B2', '#62B1B2'], 
+      'nke_crimson': ['#8C4058', '#8C4058'],
+      'nke_gold': ['#D8AE54', '#D8AE54'],
+      'nke_teal': ['#5AA8A7', '#5AA8A7'],
+      'nke_indigo': ['#3A3C7C', '#3A3C7C'], 
+      'nke_lobster': ['#FF7B5B', '#FF7B5B'],
+      'nke_olive': ['#72662A', '#72662A'],
+      'nke_lime': ['#91E580', '#91E580'],
+      'nke_sky': ['#BCD5FF', '#BCD5FF'],
+      'nke_fuschia': ['#E291DD', '#E291DD'],
+      'nke_violet': ['#8B75EA', '#8B75EA'],
+      'nke_tan': ['#E0BD84', '#E0BD84'],
+      'nke_berry': ['#D64F7C', '#D64F7C'],
+      'nke_mint': ['#A4EACA', '#A4EACA']
     });
 
     function ColorMap(min, max, palette, steps) {
