@@ -13,8 +13,10 @@ var n_domains = 0;
 function loadWordCloud(n_domains) {
 
     document.getElementById("chart").innerHTML = "";
+    
+    var file = "https://github.com/ehbeam/nke-viewer/blob/master/data/k" + pad(n_domains) + "/words_k" + pad(n_domains) + ".csv";
 
-    d3.csv("data/k" + pad(n_domains) + "/words_k" + pad(n_domains) + ".csv", function(data) {
+    d3.csv(file, function(data) {
 
         if (n_domains > 0) {
             for (i = 0; i < n_domains; i++) {
