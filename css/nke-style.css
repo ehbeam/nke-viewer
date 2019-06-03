@@ -1,43 +1,36 @@
-p {
-    font-size: 14pt;
-    margin-top: -5px;
-}
-
 body {
     font-family: Avenir;
     margin: 10px auto 0px auto;
+    background: #EDEDED;
+}
+
+p {
+    font-size: 16px;
 }
 
 button {
-    width: 33px;
-    margin: 1px;
-    padding: 5px;
-    padding-top: 3px;
-    padding-bottom: 2px;
-    background: #efefef;
+    width: 27.5px;
+    margin-left: 1px;
+    margin-right: 0px;
+    margin-top: -10px;
+    padding: 4px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+    background: white;
     text-align: center;
     border-radius: 5px;
     border-color: black;
-    box-shadow: 3px 3px 2px #b7b7b7;
+    box-shadow: 3px 3px 2px gray;
 }
 
-canvas {
-    border-radius: 5px;
-    box-shadow: 4px 4px 3px #b7b7b7;
-    cursor: crosshair;
+button:focus {
+    background: #A8A8A8;
 }
 
 #button_container {
     width: 1050px;
-    margin-left: 55px;
-    margin-right: 55px;
-}
-
-.container {
-    display: inline-block;
-    width: 1050px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 64px;
+    margin-right: 64px;
 }
 
 #chart {
@@ -46,8 +39,21 @@ canvas {
     margin-right: 45px;
     padding: 5px;
     position: absolute;
-    top: 380px;
+    top: 470px;
     cursor: default;
+}
+
+canvas {
+    border-radius: 5px;
+    box-shadow: 4px 4px 3px gray;
+    cursor: crosshair;
+}
+
+.container {
+    display: inline-block;
+    width: 1050px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 #views_left {
@@ -196,7 +202,7 @@ ul#layer_list li {
     margin-top: 5px;
     margin-left: 10px;
     float: left;
-    box-shadow: 3px 3px 2px #b7b7b7;
+    box-shadow: 3px 3px 2px gray;
 }
 
 .layer_label {
@@ -230,6 +236,6 @@ ul#layer_list {
 .slider {
     color: gray;
     border-color: black;
-    box-shadow: 3px 3px 2px #b7b7b7;
+    box-shadow: 3px 3px 2px gray;
     cursor: pointer;
 }

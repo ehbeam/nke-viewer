@@ -3,8 +3,8 @@
 var palette = ["#7597D0", "#B07EB6", "#CEBE6D", "#77B58A", "#CE7D69", 
                "#7D74A3", "#AEC87C", "#BA7E39", "#CF7593", "#846B43", 
                "#62B1B2", "#8C4058", "#D8AE54", "#5AA8A7", "#3A3C7C", 
-               "#FF7B5B", "#72662A", "#91E580", "#BCD5FF", "#E291DD",
-               "#8B75EA", "#E0BD84", "#D64F7C", "#A4EACA"];
+               "#FF7B5B", "#72662A", "#91E580", "#9AB4E2", "#E291DD",
+               "#8B75EA", "#E0BD84", "#D64F7C", "#8ACEAF", "#C6CE5A"];
 
 function pad(number) { return (number < 10 ? '0' : '') + number };
 
@@ -92,14 +92,13 @@ function draw(words) {
     .style("z-index", "10")
     .style("visibility", "hidden")
     .style("font-size", "14px")
-    .style("background", "#E2E2E2")
+    .style("background", "white")
     .style("padding", "4px")
     .style("border-radius", "5px")
     .style("border-style", "solid")
     .style("border-color", "black")
     .style("border-width", "1px")
-    .style("box-shadow", "2px 2px 3px #757575")
-    .style("opacity", "0.85");
+    .style("box-shadow", "2px 2px 3px #757575");
 
   // Draw the word cloud
   d3.select(svg_location).append("svg")

@@ -69,7 +69,8 @@
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         v = _ref[_i];
         v.clear();
-        _ref1 = this.layerList.layers.slice(0).reverse();
+        // _ref1 = this.layerList.layers.slice(0).reverse();
+        _ref1 = this.layerList.layers.slice(0);
         for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
           l = _ref1[_j];
           if (l.visible) {
@@ -297,7 +298,8 @@
             }
             return _results;
           })();
-          _this.sortLayers(order.reverse());
+          // _this.sortLayers(order.reverse());
+          _this.sortLayers(order);
           _this.selectLayer(activate != null ? activate : activate = 0);
           _this.updateUserInterface();
           return $(_this).trigger('imagesLoaded');
@@ -1133,12 +1135,13 @@
                        "rgba(125, 116, 163, 0.5)", "rgba(174, 200, 124, 0.5)", "rgba(186, 126, 57, 0.5)", "rgba(207, 117, 147, 0.5)", "rgba(132, 107, 67, 0.5)", 
                        "rgba(98, 177, 178, 0.5)", "rgba(140, 64, 88, 0.5)", "rgba(216, 174, 84, 0.5)", "rgba(90, 168, 167, 0.5)", "rgba(58, 60, 124, 0.5)", 
                        "rgba(255, 123, 91, 0.5)", "rgba(114, 102, 42, 0.5)", "rgba(145, 229, 128, 0.5)", "rgba(188, 213, 255, 0.5)", "rgba(226, 145, 221, 0.5)",
-                       "rgba(139, 117, 234, 0.5)", "rgba(224, 189, 132, 0.5)", "rgba(214, 79, 124, 0.5)", "rgba(164, 234, 202, 0.5)"];
+                       "rgba(139, 117, 234, 0.5)", "rgba(224, 189, 132, 0.5)", "rgba(214, 79, 124, 0.5)", "rgba(164, 234, 202, 0.5)", "rgba(244, 255, 107, 0.5)"];
 
     UserInterface.prototype.updateLayerList = function(layers, selectedIndex) {
       var deletion_icon, download_icon, i, l, visibility_icon, _i, _ref;
       var layerIndex = 0;
-      var kLayerColors = layerColors.slice(0, layers.length).reverse() 
+      //var kLayerColors = layerColors.slice(0, layers.length).reverse() 
+      var kLayerColors = layerColors.slice(0, layers.length)
       $(this.layerListId).empty();
       for (i = _i = 0, _ref = layers.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
         l = layers[i];
@@ -1586,7 +1589,8 @@
       'nke_violet': ['#8B75EA', '#8B75EA'],
       'nke_tan': ['#E0BD84', '#E0BD84'],
       'nke_berry': ['#D64F7C', '#D64F7C'],
-      'nke_mint': ['#A4EACA', '#A4EACA']
+      'nke_mint': ['#A4EACA', '#A4EACA'],
+      'nke_sun': ['#F4FF6B', '#F4FF6B']
     });
 
     function ColorMap(min, max, palette, steps) {

@@ -1,8 +1,9 @@
+
 var nke_palette = ["nke_blue", "nke_magenta", "nke_yellow", "nke_green", "nke_red", 
                    "nke_purple", "nke_chartreuse", "nke_orange", "nke_pink", "nke_brown", 
                    "nke_cyan", "nke_crimson", "nke_gold", "nke_teal", "nke_indigo", 
                    "nke_lobster", "nke_olive", "nke_lime", "nke_sky", "nke_fuschia", 
-                   "nke_violet", "nke_tan", "nke_berry", "nke_mint"]
+                   "nke_violet", "nke_tan", "nke_berry", "nke_mint", "nke_sun"]
 
 var names = {2: ['Arousal', 'Manipulation'],
              3: ['Arousal', 'Manipulation', 'Language'],
