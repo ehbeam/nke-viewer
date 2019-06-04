@@ -78,7 +78,7 @@ function drawWordCloud(words, name, i){
 
   var svg_location = "#chart";
   var width = 193; 
-  var height = 125;
+  var height = 130;
 
   var fill = d3.scale.category20();
 
@@ -89,7 +89,7 @@ function drawWordCloud(words, name, i){
         return d.value;
       })
      ])
-     .range([1,18]);
+     .range([1,14]);
 
   d3.layout.cloud().size([width, height])
     .timeInterval(20)
@@ -110,14 +110,13 @@ function drawWordCloud(words, name, i){
       .style("z-index", "10")
       .style("visibility", "hidden")
       .style("font-size", "12px")
-      .style("background", "white")
+      .style("color", "white")
+      .style("background", "black")
       .style("padding", "2px")
       .style("padding-left", "8px")
       .style("padding-right", "8px")
       .style("border-radius", "5px")
-      .style("border-style", "solid")
-      .style("border-color", "black")
-      .style("border-width", "1px")
+      .style("opacity", "0.65")
       .style("box-shadow", "2px 2px 3px #757575");
 
     // Draw the word cloud
