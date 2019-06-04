@@ -16,24 +16,24 @@ function loadWordCloud(n_domains) {
 
     d3.csv(file, function(data) {
 
-        if (n_domains > 0) {
-            for (i = 0; i < n_domains; i++) {
+      for (var domain_i = 0; domain_i < n_domains; domain_i++) {
 
-                var domain_words = [];
+        var domain_words = [];
 
-                for (j = 0; j < data.length; j++) {
-                    if (parseInt(data[j]["CLUSTER"]) == i + 1) {
-                        var term = data[j]["TOKEN"].replace(/_/g, " ");
-                        var count = parseFloat(data[j]["R"]) * 1000; 
-                        for (k = 0; k < count; k++) {
-                            domain_words.push(term);
-                        }
-                    }
-                }
-                drawWordCloud(domain_words, cloudPalette[i]);
+        for (var row_i = 0; row_i < data.length; row_i++) {
+            if (parseInt(data[row_i]["CLUSTER"]) == domain_i + 1) {
+              var term = data[row_i]["TOKEN"].replace(/_/g, " ");
+              var count = parseFloat(data[row_i]["R"]) * 1000; 
+              for (var word_i = 0; word_i < count; word_i++) {
+                domain_words.push(term);
+              }
             }
         }
-    });
+    
+        drawWordCloud(domain_words, cloudPalette[domain_i]);
+
+      }
+  });
 
 }
 
