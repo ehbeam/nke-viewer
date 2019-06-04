@@ -28,11 +28,11 @@ function loadWordCloud(n_domains) {
                 domain_words.push(term);
               }
             }
-        }
+        };
     
         drawWordCloud(domain_words, cloudPalette[domain_i]);
 
-      }
+      };
   });
 
 }
