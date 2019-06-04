@@ -25,6 +25,11 @@ button {
 
 button:focus {
     background: #A8A8A8;
+    outline: none;
+}
+
+*:focus {
+    outline: none;
 }
 
 #page_container {
@@ -50,6 +55,8 @@ button:focus {
     width: 1050px;
     margin-left: 35px;
     margin-right: 35px;
+    margin-top: 40px;
+    margin-bottom: 45px;
 }
 
 #button_container {
@@ -64,7 +71,7 @@ button:focus {
     margin-right: 25px;
     padding: 5px;
     position: absolute;
-    top: 470px;
+    top: 450px;
     cursor: default;
 }
 
