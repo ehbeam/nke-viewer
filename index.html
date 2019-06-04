@@ -21,87 +21,91 @@
 
 <body>
 
-<div id="title_container">
-    <center>
-        <br/><br/>
-        <img src="icon.png" height="50px" id="icon" />
-        <h1 id="title">Neuroscience Knowledge Engine</h1>
-        <br/><br/><br/><br/>
-    </center>
-</div>
+<div id="page_container" style="width:1090px; margin:0 auto;">
 
-<div>
-    <div>
-        <div id="button_container">
+    <div id="title_container">
         <center>
-            <p style="display:inline;">Number of Domains &nbsp;</p>
-            <button onClick="loadBrainMap(2);loadWordCloud(2)">2</button>
-            <button onClick="loadBrainMap(3);loadWordCloud(3)">3</button>
-            <button onClick="loadBrainMap(4);loadWordCloud(4)">4</button>
-            <button onClick="loadBrainMap(5);loadWordCloud(5)">5</button>
-            <button onClick="loadBrainMap(6);loadWordCloud(6)">6</button>
-            <button onClick="loadBrainMap(7);loadWordCloud(7)">7</button>
-            <button onClick="loadBrainMap(8);loadWordCloud(8)">8</button>
-            <button onClick="loadBrainMap(9);loadWordCloud(9)">9</button>
-            <button onClick="loadBrainMap(10);loadWordCloud(10)">10</button>
-            <button onClick="loadBrainMap(11);loadWordCloud(11)">11</button>
-            <button onClick="loadBrainMap(12);loadWordCloud(12)">12</button>
-            <button onClick="loadBrainMap(13);loadWordCloud(13)">13</button>
-            <button onClick="loadBrainMap(14);loadWordCloud(14)">14</button>
-            <button onClick="loadBrainMap(15);loadWordCloud(15)">15</button>
-            <button onClick="loadBrainMap(16);loadWordCloud(16)">16</button>
-            <button onClick="loadBrainMap(17);loadWordCloud(17)">17</button>
-            <button onClick="loadBrainMap(18);loadWordCloud(18)">18</button>
-            <button onClick="loadBrainMap(19);loadWordCloud(19)">19</button>
-            <button onClick="loadBrainMap(20);loadWordCloud(20)">20</button>
-            <button onClick="loadBrainMap(21);loadWordCloud(21)">21</button>
-            <button onClick="loadBrainMap(22);loadWordCloud(22)">22</button>
-            <button onClick="loadBrainMap(23);loadWordCloud(23)">23</button>
-            <button onClick="loadBrainMap(24);loadWordCloud(24)">24</button>
-            <button onClick="loadBrainMap(25);loadWordCloud(25)">25</button>
             <br/><br/>
+            <img src="icon.png" height="50px" id="icon" />
+            <h1 id="title">Neuroscience Knowledge Engine</h1>
+            <br/><br/><br/><br/>
         </center>
-        </div>
     </div>
-</div>
 
-<div class='container'>
-    <div class='view' id='view_coronal'>
-        <canvas height='220' id='cor_canvas' width='220'></canvas>
-        <div class='slider nav-slider-vertical' id='nav-yaxis' style="float:left"></div>
-    </div>
-    <div class='view' id='view_sagittal'>
-        <canvas height='220' id='sag_canvas' width='264'></canvas>
-        <div class='slider nav-slider-horizontal' id='nav-xaxis'></div>
-    </div>
-    <div class='view' id='view_axial'>
-        <canvas height='220' id='axial_canvas' width='183'></canvas>
-        <div class='slider nav-slider-vertical' id='nav-zaxis' style="float:right"></div>
-    </div>
-    <div id="layer_panel" align="center" >
-        <div id="layer_list_panel" align="center">
-            <p>Layers</p>
-            <div id="layer_visible_list" align="center"></div>
-            <ul id="layer_list" class="layer_settings" align="center">
-            </ul>
+    <div>
+        <div>
+            <div id="button_container">
+            <center>
+                <p style="display:inline;">Number of Domains &nbsp;</p>
+                <button onClick="loadBrainMap(2);loadWordCloud(2)">2</button>
+                <button onClick="loadBrainMap(3);loadWordCloud(3)">3</button>
+                <button onClick="loadBrainMap(4);loadWordCloud(4)">4</button>
+                <button onClick="loadBrainMap(5);loadWordCloud(5)">5</button>
+                <button onClick="loadBrainMap(6);loadWordCloud(6)">6</button>
+                <button onClick="loadBrainMap(7);loadWordCloud(7)">7</button>
+                <button onClick="loadBrainMap(8);loadWordCloud(8)">8</button>
+                <button onClick="loadBrainMap(9);loadWordCloud(9)">9</button>
+                <button onClick="loadBrainMap(10);loadWordCloud(10)">10</button>
+                <button onClick="loadBrainMap(11);loadWordCloud(11)">11</button>
+                <button onClick="loadBrainMap(12);loadWordCloud(12)">12</button>
+                <button onClick="loadBrainMap(13);loadWordCloud(13)">13</button>
+                <button onClick="loadBrainMap(14);loadWordCloud(14)">14</button>
+                <button onClick="loadBrainMap(15);loadWordCloud(15)">15</button>
+                <button onClick="loadBrainMap(16);loadWordCloud(16)">16</button>
+                <button onClick="loadBrainMap(17);loadWordCloud(17)">17</button>
+                <button onClick="loadBrainMap(18);loadWordCloud(18)">18</button>
+                <button onClick="loadBrainMap(19);loadWordCloud(19)">19</button>
+                <button onClick="loadBrainMap(20);loadWordCloud(20)">20</button>
+                <button onClick="loadBrainMap(21);loadWordCloud(21)">21</button>
+                <button onClick="loadBrainMap(22);loadWordCloud(22)">22</button>
+                <button onClick="loadBrainMap(23);loadWordCloud(23)">23</button>
+                <button onClick="loadBrainMap(24);loadWordCloud(24)">24</button>
+                <button onClick="loadBrainMap(25);loadWordCloud(25)">25</button>
+                <br/><br/>
+            </center>
+            </div>
         </div>
-        <div id="layer_panel">
-            <div id="layer_list_panel">
-                <div id="layer_visible_list"></div>
-                <ul id="layer_list" class="layer_settings">
+    </div>
+
+    <div class='container'>
+        <div class='view' id='view_coronal'>
+            <canvas height='220' id='cor_canvas' width='220'></canvas>
+            <div class='slider nav-slider-vertical' id='nav-yaxis' style="float:left"></div>
+        </div>
+        <div class='view' id='view_sagittal'>
+            <canvas height='220' id='sag_canvas' width='264'></canvas>
+            <div class='slider nav-slider-horizontal' id='nav-xaxis'></div>
+        </div>
+        <div class='view' id='view_axial'>
+            <canvas height='220' id='axial_canvas' width='183'></canvas>
+            <div class='slider nav-slider-vertical' id='nav-zaxis' style="float:right"></div>
+        </div>
+        <div id="layer_panel" align="center" >
+            <div id="layer_list_panel" align="center">
+                <p>Layers</p>
+                <div id="layer_visible_list" align="center"></div>
+                <ul id="layer_list" class="layer_settings" align="center">
                 </ul>
             </div>
-            <p>Opacity</p>
-            <div id="layer_settings_panel" align="left">
-                <select id="select_color" class="layer_settings" style="display:none"></select>
-                <div class='slider layer_settings' id='opacity' align="center" style="width:195px"></div>
+            <div id="layer_panel">
+                <div id="layer_list_panel">
+                    <div id="layer_visible_list"></div>
+                    <ul id="layer_list" class="layer_settings">
+                    </ul>
+                </div>
+                <p>Opacity</p>
+                <div id="layer_settings_panel" align="left">
+                    <select id="select_color" class="layer_settings" style="display:none"></select>
+                    <div class='slider layer_settings' id='opacity' align="center" style="width:195px"></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<br/><br/><br/>
+    <br/><br/><br/>
 
-<div id="chart"></div>
+    <div id="chart"></div>
+
+</div>
 
 </body>
 
