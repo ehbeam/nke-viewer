@@ -53,6 +53,13 @@ function loadWordCloud(n_domains) {
 
 }
 
+// Function to move select to front
+// https://github.com/wbkd/d3-extended
+d3.selection.prototype.moveToFront = function() {  
+  return this.each(function(){
+    this.parentNode.appendChild(this);
+  });
+};
 
 function drawWordCloud(words, name, i){
 
@@ -139,14 +146,19 @@ function drawWordCloud(words, name, i){
         })
         .text(function(d) { return d.key; })
         .on("mouseover", function(d, i) {
-          d3.select(this).style("font-size", function(d) { return xScale(d.value) + 3 + "px"; });
+          d3.select(this)
+              .style("font-size", function(d) { return xScale(d.value) + 3 + "px"; })
+              .style("fill", "black")
+              .moveToFront();
           tooltip.html("<i>r<sub>pb</sub></i> = " + d.value / 1000)
               .style("left", d3.event.pageX + 10 + "px")
               .style("top", d3.event.pageY + 10 + "px");
           return tooltip.style("visibility", "visible")
         })
         .on("mouseout", function(d, i) {
-          d3.select(this).style("font-size", function(d) { return xScale(d.value) + "px"; });
+          d3.select(this)
+              .style("font-size", function(d) { return xScale(d.value) + "px"; })
+              .style("fill", color);
           return tooltip.style("visibility", "hidden")
         });
 
