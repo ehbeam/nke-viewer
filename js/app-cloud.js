@@ -6,7 +6,22 @@ var cloudPalette = ["#7597D0", "#B07EB6", "#CEBE6D", "#77B58A", "#CE7D69",
                     "#FF7B5B", "#72662A", "#91E580", "#9AB4E2", "#E291DD",
                     "#8B75EA", "#E0BD84", "#D64F7C", "#8ACEAF", "#C6CE5A"];
 
-function pad(number) { return (number < 10 ? '0' : '') + number };
+var titlePalette = ["rgba(117, 151, 208, 0.5)", "rgba(176, 126, 182, 0.5)", "rgba(206, 190, 109, 0.5)", "rgba(119, 181, 138, 0.5)", "rgba(206, 125, 105, 0.5)", 
+                    "rgba(125, 116, 163, 0.5)", "rgba(174, 200, 124, 0.5)", "rgba(186, 126, 57, 0.5)", "rgba(207, 117, 147, 0.5)", "rgba(132, 107, 67, 0.5)", 
+                    "rgba(111, 128, 153, 0.5)", "rgba(140, 64, 88, 0.5)", "rgba(216, 174, 84, 0.5)", "rgba(90, 168, 167, 0.5)", "rgba(58, 60, 124, 0.5)", 
+                    "rgba(255, 123, 91, 0.5)", "rgba(114, 102, 42, 0.5)", "rgba(145, 229, 128, 0.5)", "rgba(188, 213, 255, 0.5)", "rgba(226, 145, 221, 0.5)",
+                    "rgba(139, 117, 234, 0.5)", "rgba(224, 189, 132, 0.5)", "rgba(214, 79, 124, 0.5)", "rgba(164, 234, 202, 0.5)", "rgba(244, 255, 107, 0.5)"];
+
+
+function pad(number) { return (number < 10 ? "0" : "") + number };
+
+function toTitleCase(str) {
+  str = str.toLowerCase().split(" ");
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return str.join(" ");
+};
 
 function loadWordCloud(n_domains) {
 
@@ -27,10 +42,11 @@ function loadWordCloud(n_domains) {
               for (var word_i = 0; word_i < count; word_i++) {
                 domain_words.push(term);
               }
+              var name = toTitleCase(data[row_i]["DOMAIN"].replace(/_/g, " "));
             }
         };
     
-        drawWordCloud(domain_words, cloudPalette[domain_i]);
+        drawWordCloud(domain_words, name, domain_i);
 
       };
   });
@@ -38,7 +54,10 @@ function loadWordCloud(n_domains) {
 }
 
 
-function drawWordCloud(words, color){
+function drawWordCloud(words, name, i){
+
+  var color = cloudPalette[i];
+  var titleColor = titlePalette[i];
 
   var word_count = {};
 
@@ -58,8 +77,8 @@ function drawWordCloud(words, color){
     }
 
   var svg_location = "#chart";
-  var width = 198; 
-  var height = 145; 
+  var width = 193; 
+  var height = 125;
 
   var fill = d3.scale.category20();
 
@@ -71,6 +90,7 @@ function drawWordCloud(words, color){
       })
      ])
      .range([1,18]);
+
   d3.layout.cloud().size([width, height])
     .timeInterval(20)
     .words(word_entries)
@@ -89,9 +109,11 @@ function drawWordCloud(words, color){
       .style("position", "absolute")
       .style("z-index", "10")
       .style("visibility", "hidden")
-      .style("font-size", "14px")
+      .style("font-size", "12px")
       .style("background", "white")
-      .style("padding", "4px")
+      .style("padding", "2px")
+      .style("padding-left", "8px")
+      .style("padding-right", "8px")
       .style("border-radius", "5px")
       .style("border-style", "solid")
       .style("border-color", "black")
@@ -101,7 +123,7 @@ function drawWordCloud(words, color){
     // Draw the word cloud
     d3.select(svg_location).append("svg")
         .attr("width", width)
-        .attr("height", height)
+        .attr("height", height + 35)
       .append("g")
         .attr("transform", "translate(" + [width >> 1, height >> 1] + ")")
       .selectAll("text")
@@ -111,9 +133,10 @@ function drawWordCloud(words, color){
         .style("font-family", "Avenir")
         .style("fill", color)
         .style("text-shadow", "2px 2px 3px #CECECE")
+        .style("margin-bottom", "5px")
         .attr("text-anchor", "middle")
         .attr("transform", function(d) {
-          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+          return "translate(" + [d.x, d.y + 25] + ")rotate(" + d.rotate + ")";
         })
         .text(function(d) { return d.key; })
         .on("mouseover", function(d, i) {
@@ -127,6 +150,21 @@ function drawWordCloud(words, color){
           d3.select(this).style("font-size", function(d) { return xScale(d.value) + "px"; });
           return tooltip.style("visibility", "hidden")
         });
+
+      // Draw the title
+    d3.select(svg_location).append("text")
+      .style("font-size", "12px")
+      .style("font-family", "Avenir")
+      .style("fill", "black")
+      .style("text-align", "center")
+      .style("background-color", titleColor)
+      .style("padding", "2px")
+      .style("padding-top", "3px")
+      .style("border-radius", "3px")
+      .style("position", "absolute")
+      .style("width", width - 8 + "px")
+      .style("margin-left", -1 * (width - 4) + "px")
+      .text(name);
     }
 
     d3.layout.cloud().stop();

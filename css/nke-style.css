@@ -61,7 +61,8 @@ button:focus {
 
 #icon {
     display: inline;
-    margin-right: 10px;
+    margin-right: 8px;
+    margin-top: -45px;
     -webkit-filter: drop-shadow(2px 2px 3px gray); 
     filter: drop-shadow(2px 2px 3px gray);
 }
@@ -77,8 +78,9 @@ button:focus {
     width: 1050px;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 45px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 45px;
+    vertical-align: bottom;
 }
 
 #button_container {
@@ -89,11 +91,11 @@ button:focus {
 
 #chart {
     width: 810px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
     padding: 5px;
     position: absolute;
-    top: 455px;
+    top: 465px;
     cursor: default;
 }
 

@@ -64,7 +64,7 @@ function loadBrainMap(k) {
                         'url': 'data/k' + pad(k) + '/circuit_k' + pad(k) + '_dom' + pad(i) + '.nii.gz',
                         'name': names[k][i-1],
                         'colorPalette': nke_palette[i-1],
-                        'opacity': 0.5,
+                        'opacity': 0.6,
                         'cache': false
                     })
         };
