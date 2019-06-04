@@ -83,16 +83,18 @@ button:focus {
     vertical-align: bottom;
 }
 
-#github_icon {
+.footer_icon {
     opacity: 0.6;
-    -webkit-filter: drop-shadow(2px 2px 3px gray); 
-    filter: drop-shadow(2px 2px 3px gray);
+    margin-left: 3px;
+    margin-right: 3px;
+    -webkit-filter: drop-shadow(1px 1px 2px gray); 
+    filter: drop-shadow(1px 1px 2px gray);
 }
 
 #footer {
-    margin-top: 185px;
+    margin-top: 155px;
     margin-bottom: 50px;
-    margin-left: 965px;
+    margin-left: 920px;
 }
 
 #button_container {
