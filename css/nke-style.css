@@ -84,17 +84,15 @@ button:focus {
 }
 
 .footer_icon {
-    opacity: 0.6;
+    opacity: 0.45;
     margin-left: 3px;
     margin-right: 3px;
-    -webkit-filter: drop-shadow(1px 1px 2px gray); 
-    filter: drop-shadow(1px 1px 2px gray);
 }
 
 #footer {
     margin-top: 155px;
     margin-bottom: 50px;
-    margin-left: 920px;
+    margin-left: 942px;
 }
 
 #button_container {
