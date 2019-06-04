@@ -39,7 +39,7 @@ button:focus {
 
 #icon {
     display: inline;
-    margin-right: 12px;
+    margin-right: 10px;
     margin-top: -25px;
     -webkit-filter: drop-shadow(2px 2px 3px gray); 
     filter: drop-shadow(2px 2px 3px gray);
