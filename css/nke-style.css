@@ -8,6 +8,28 @@ p {
     font-size: 16px;
 }
 
+a {
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    color: black;
+    font-style: normal;
+}
+
+a:focus {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    color: black;
+    font-style: normal;
+}
+
 button {
     width: 27.5px;
     margin-left: 1px;
@@ -40,7 +62,6 @@ button:focus {
 #icon {
     display: inline;
     margin-right: 10px;
-    margin-top: -25px;
     -webkit-filter: drop-shadow(2px 2px 3px gray); 
     filter: drop-shadow(2px 2px 3px gray);
 }
@@ -48,15 +69,16 @@ button:focus {
 #title {
     display: inline;
     font-family: Superclarendon;
+    font-size: 38px;
     text-shadow: 2px 2px 3px gray;
 }
 
 #title_container {
     width: 1050px;
-    margin-left: 35px;
-    margin-right: 35px;
-    margin-top: 40px;
-    margin-bottom: 45px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 45px;
+    margin-bottom: 30px;
 }
 
 #button_container {
@@ -71,7 +93,7 @@ button:focus {
     margin-right: 25px;
     padding: 5px;
     position: absolute;
-    top: 450px;
+    top: 455px;
     cursor: default;
 }
 
