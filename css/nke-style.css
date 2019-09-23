@@ -92,7 +92,7 @@ button:focus {
 #footer {
     margin-top: 155px;
     margin-bottom: 50px;
-    margin-left: 942px;
+    margin-left: 920px;
 }
 
 #button_container {
@@ -102,12 +102,13 @@ button:focus {
 }
 
 #chart {
-    width: 810px;
-    margin-left: 30px;
-    margin-right: 30px;
-    padding: 5px;
+    display: block;
+    width: 772px;
+    padding: 0px;
     position: absolute;
     top: 465px;
+    margin-left: 40px;
+    margin-right: 40px;
     cursor: default;
 }
 

@@ -87,8 +87,6 @@ function drawWordCloud(words, name, i){
   var width = 193; 
   var height = 130;
 
-  var fill = d3.scale.category20();
-
   var word_entries = d3.entries(word_count);
 
   var xScale = d3.scale.linear()
@@ -99,7 +97,7 @@ function drawWordCloud(words, name, i){
      .range([1,14]);
 
   d3.layout.cloud().size([width, height])
-    .timeInterval(20)
+    .timeInterval(25)
     .words(word_entries)
     .fontSize(function(d) { return xScale(+d.value); })
     .text(function(d) { return d.key; })
@@ -109,6 +107,7 @@ function drawWordCloud(words, name, i){
     .start();
 
   function draw(words) {
+
 
     // Define the tooltip
     var tooltip = d3.select("body")
@@ -162,21 +161,21 @@ function drawWordCloud(words, name, i){
           return tooltip.style("visibility", "hidden")
         });
 
-      // Draw the title
-    d3.select(svg_location).append("text")
-      .style("font-size", "12px")
-      .style("font-family", "Avenir")
-      .style("fill", "black")
-      .style("text-align", "center")
-      .style("background-color", titleColor)
-      .style("padding", "2px")
-      .style("padding-top", "3px")
-      .style("border-radius", "3px")
-      .style("position", "absolute")
-      .style("width", width - 8 + "px")
-      .style("margin-left", -1 * (width - 4) + "px")
-      .text(name);
+    // // Add the plot title
+    // d3.select(svg_location).append("text")
+    //   .style("font-size", "0px")
+    //   .style("font-family", "Avenir")
+    //   .style("text-align", "center")
+    //   .style("background-color", "none")
+    //   .style("padding", "2px")
+    //   .style("padding-top", "3px")
+    //   .style("border-radius", "3px")
+    //   .style("position", "absolute")
+    //   .style("width", width - 8 + "px")
+    //   .style("margin-left", -1 * (width - 4) + "px")
+    //   .text(name);
     }
 
     d3.layout.cloud().stop();
+
 }
