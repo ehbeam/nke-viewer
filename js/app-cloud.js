@@ -42,7 +42,8 @@ function loadWordCloud(n_domains) {
               for (var word_i = 0; word_i < count; word_i++) {
                 domain_words.push(term);
               }
-              var name = toTitleCase(data[row_i]["DOMAIN"].replace(/_/g, " "));
+              // var name = toTitleCase(data[row_i]["DOMAIN"].replace(/_/g, " "));
+              var name = data[row_i]["DOMAIN"].replace(/_/g, " ").toLowerCase();
             }
         };
     
@@ -108,7 +109,6 @@ function drawWordCloud(words, name, i){
 
   function draw(words) {
 
-
     // Define the tooltip
     var tooltip = d3.select("body")
       .append("div")
@@ -122,8 +122,8 @@ function drawWordCloud(words, name, i){
       .style("padding-left", "8px")
       .style("padding-right", "8px")
       .style("border-radius", "5px")
-      .style("opacity", "0.65")
-      .style("box-shadow", "2px 2px 3px #757575");
+      .style("opacity", "0.65");
+      // .style("box-shadow", "2px 2px 3px #757575");
 
     // Draw the word cloud
     d3.select(svg_location).append("svg")
@@ -137,7 +137,7 @@ function drawWordCloud(words, name, i){
         .style("font-size", function(d) { return xScale(d.value) + "px"; })
         .style("font-family", "Avenir")
         .style("fill", color)
-        .style("text-shadow", "2px 2px 3px #CECECE")
+        // .style("text-shadow", "2px 2px 3px #CECECE")
         .style("margin-bottom", "5px")
         .attr("text-anchor", "middle")
         .attr("transform", function(d) {

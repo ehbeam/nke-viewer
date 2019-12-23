@@ -79,23 +79,29 @@
             <canvas height='220' id='axial_canvas' width='183'></canvas>
             <div class='slider nav-slider-vertical' id='nav-zaxis' style="float:right"></div>
         </div>
-        <div id="layer_panel" align="center" >
+        <div id="viewer_panel" align="center" >
             <div id="layer_list_panel" align="center">
                 <p>Layers</p>
                 <div id="layer_visible_list" align="center"></div>
                 <ul id="layer_list" class="layer_settings" align="center">
                 </ul>
             </div>
-            <div id="layer_panel">
+            <div id="viewer_panel">
                 <div id="layer_list_panel">
                     <div id="layer_visible_list"></div>
                     <ul id="layer_list" class="layer_settings">
                     </ul>
                 </div>
                 <p>Opacity</p>
-                <div id="layer_settings_panel" align="left">
+                <div id="opacity_panel" align="left">
                     <select id="select_color" class="layer_settings" style="display:none"></select>
                     <div class='slider layer_settings' id='opacity' align="center" style="width:195px"></div>
+                </div>
+                <p id="value_title">Voxel Value</p>
+                <div id="value_panel" align="left">
+                    <a href="#" id="value_data_tooltip" data-tooltip="Select a domain number to see its mapping">
+                        <span id="value_data"></span>
+                    </a>
                 </div>
             </div>
         </div>

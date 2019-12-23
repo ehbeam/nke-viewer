@@ -1496,6 +1496,20 @@
       cy = pt.y / this.height;
       pt = this._snapToGrid(cx, cy);
       this.viewer.moveToViewerCoords(this.dim, pt.x, pt.y);
+      
+      // Added by Ellie Beam to print the voxel value (12/22/19)
+      var xyz = this.viewer.coords_ijk;
+      var x, y, z; x = xyz[0]; y = xyz[1]; z = xyz[2];
+      var values = [];
+      if (this.viewer.layerList.layers.length > 1) {
+        for (var i = 1; i < this.viewer.layerList.layers.length; i++) {
+          values.push(this.viewer.layerList.layers[i].image.data[z][y][x])
+        }
+        var value = Math.max.apply(Math, values);
+        document.getElementById("value_data").innerHTML = value.toFixed(3);
+        document.getElementById("value_data_tooltip").setAttribute("data-tooltip", "Positive point-wise mutual information of the structure with occurrences of its domain terms");
+      }
+      
       return $(this.viewer).trigger('afterClick');
     };
 
@@ -1571,7 +1585,7 @@
       'nke_yellow': ['#CEBE6D', '#CEBE6D'],
       'nke_chartreuse': ['#AEC87C', '#AEC87C'],
       'nke_green': ['#77B58A', '#77B58A'], 
-      'nke_blue': ['#7597D0', '#7597D0'],
+      'nke_blue': ['#B4BFD1', '#A2B5D3', '#90AAD5', '#84A1D1', '#7597D0', '#658ED2', '#5685D3', '#4379D4', '#326FD6', '#1E63D7', '#0E5AD9', '#004FD3'],
       'nke_magenta': ['#B07EB6', '#B07EB6'],
       'nke_purple': ['#7D74A3', '#7D74A3'], 
       'nke_brown': ['#846B43', '#846B43'],

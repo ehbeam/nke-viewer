@@ -65,7 +65,8 @@ function loadBrainMap(k) {
                         'name': names[k][i-1],
                         'colorPalette': nke_palette[i-1],
                         'opacity': 0.6,
-                        'cache': false
+                        'cache': false,
+                        'val': 0.5
                     })
         };
     viewer.loadImages(images);

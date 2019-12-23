@@ -42,7 +42,7 @@ button {
     text-align: center;
     border-radius: 5px;
     border-color: black;
-    box-shadow: 3px 3px 2px gray;
+    /*box-shadow: 3px 3px 2px gray;*/
 }
 
 button:focus {
@@ -63,15 +63,15 @@ button:focus {
     display: inline;
     margin-right: 8px;
     margin-top: -45px;
-    -webkit-filter: drop-shadow(2px 2px 3px gray); 
-    filter: drop-shadow(2px 2px 3px gray);
+    /*-webkit-filter: drop-shadow(2px 2px 3px gray); */
+    /*filter: drop-shadow(2px 2px 3px gray);*/
 }
 
 #title {
     display: inline;
     font-family: Superclarendon;
     font-size: 38px;
-    text-shadow: 2px 2px 3px gray;
+    /*text-shadow: 2px 2px 3px gray;*/
 }
 
 #title_container {
@@ -114,7 +114,7 @@ button:focus {
 
 canvas {
     border-radius: 5px;
-    box-shadow: 4px 4px 3px gray;
+    /*box-shadow: 4px 4px 3px gray;*/
     cursor: crosshair;
 }
 
@@ -172,20 +172,11 @@ canvas {
   margin-top: 13px;
 }
 
-#layer_panel {
+#viewer_panel {
     width: 215px;
     float: left;
     margin-left: 10px;
     margin-top: 20px;
-}
-
-#layer_settings_panel {
-    font-size: 14px;
-    clear: left;
-    width: 215px;
-    margin-left: 10px;
-    margin-top: 0px;
-    float: left;
 }
 
 #layer_list_panel {
@@ -205,6 +196,40 @@ canvas {
     width: 25px;
     margin-left: 10px;
     float: left;
+}
+
+
+#opacity_panel {
+    font-size: 14px;
+    clear: left;
+    width: 215px;
+    margin-left: 10px;
+    margin-top: 0px;
+    float: left;
+}
+
+#value_title {
+    padding-top: 34px;
+}
+
+#value_panel {
+    display: inline-block;
+    width: 150px;
+    height: 21px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+    padding: 2px;
+    background: white;
+    text-align: center;
+    border-radius: 3px;
+    cursor: default;
+}
+
+#value_data {
+    cursor: default;
+    font-size: 13px;
+    padding-top: 3px;
+    padding-bottom: 2px;
 }
 
 #color_palette {
@@ -271,7 +296,7 @@ ul#layer_list li {
     margin-top: 5px;
     margin-left: 10px;
     float: left;
-    box-shadow: 3px 3px 2px gray;
+    /*box-shadow: 3px 3px 2px gray;*/
 }
 
 .layer_label {
@@ -291,11 +316,11 @@ ul#layer_list {
 
 .selected {
     border-radius: 3px;
-    box-shadow: 0 1px 0 0 black; /* Border bottom */
-    box-shadow: 0 -1px 0 0 black; /* Border top */
-    box-shadow: -1px 0 0 0 black; /* Border left */
-    box-shadow: 1px 0 0 0 black; /* Border right */
-    box-shadow: 0 0 0 1px black; /* All the borders by using the spread properties */
+    /*box-shadow: 0 1px 0 0 black;
+    box-shadow: 0 -1px 0 0 black; 
+    box-shadow: -1px 0 0 0 black;
+    box-shadow: 1px 0 0 0 black;
+    box-shadow: 0 0 0 1px black; */
 }
 
 #opacity {
@@ -306,6 +331,67 @@ ul#layer_list {
     background: white;
     color: gray;
     border-color: black;
-    box-shadow: 3px 3px 2px gray;
+    /*box-shadow: 3px 3px 2px gray;*/
     cursor: pointer;
+}
+
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  top: 135%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -90px;
+  padding: 12px;
+  width: 180px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: none;
+  /*background-color: hsla(0, 0%, 20%, 0.9);*/
+  color: black;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 8px solid #BABABA;
+  border-top: 8px solid #BABABA;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }
