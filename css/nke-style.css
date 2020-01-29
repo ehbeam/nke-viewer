@@ -215,10 +215,11 @@ canvas {
 #value_panel {
     display: inline-block;
     width: 150px;
-    height: 21px;
+    height: 42px;
     margin-top: -2px;
     margin-bottom: -2px;
     padding: 2px;
+    padding-top: 3px;
     background: white;
     text-align: center;
     border-radius: 3px;
@@ -353,7 +354,7 @@ ul#layer_list {
 /* Position tooltip above the element */
 [data-tooltip]:before {
   position: absolute;
-  top: 135%;
+  top: 120%;
   left: 50%;
   margin-bottom: 5px;
   margin-left: -90px;
@@ -374,7 +375,7 @@ ul#layer_list {
 /* Triangle hack to make tooltip look like a speech bubble */
 [data-tooltip]:after {
   position: absolute;
-  top: 20px;
+  top: 41px;
   left: 50%;
   margin-left: -5px;
   width: 0;
