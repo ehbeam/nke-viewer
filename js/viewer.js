@@ -1525,7 +1525,7 @@
       // Added by Ellie Beam to print the voxel value (12/22/19)
       var xyz = this.viewer.coords_ijk;
       var x, y, z; x = xyz[0]; y = xyz[1]; z = xyz[2];
-      var value = 0; var name = []; 
+      var value = 0; var name = ""; var color = "white"; 
       if (this.viewer.layerList.layers.length > 1) {
         var n_layers = this.viewer.layerList.layers.length - 1;
         for (var i = 1; i < this.viewer.layerList.layers.length; i++) {
@@ -1533,10 +1533,16 @@
           if (this_value > value) {
             value = this_value;
             name = names[n_layers][i-1];
+            palette = ColorMap.PALETTES[nke_palette[i-1]]
+            color = palette[Math.floor(palette.length * 0.3)];
           }
         }
-        document.getElementById("value_data").innerHTML = "<span style=''>" + name + "</span><br/>PPMI = " + value.toFixed(5);
+        square = "<div id='value_data_swatch' style='background-color:" + color + "'></div>"
+        document.getElementById("value_data").innerHTML = square + "<div style='margin-top:-30px;width:135px;float:right;text-align:left'><span>" + name + "</span><br/>PPMI = " + value.toFixed(5) + "</div>";
         document.getElementById("value_data_tooltip").setAttribute("data-tooltip", "Positive point-wise mutual information (PPMI) of the structure with occurrences of its domain terms (FDR<0.0001)");
+        if (value == 0) {
+          document.getElementById("value_data").innerHTML = ""; 
+        }
       }
       
       return $(this.viewer).trigger('afterClick');

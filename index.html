@@ -1,7 +1,8 @@
 <html>
 
 <head>
-    <link rel="shortcut icon" type="image/x-icon" href="icons/logo.png">
+    <title>NKE Viewer</title>
+    <link rel="shortcut icon" type="image/x-icon" href="icons/favicon.png">
     <link href="css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="css/nke-jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="css/nke-style.css" media="screen" rel="stylesheet" type="text/css" />
@@ -15,6 +16,8 @@
     <script src="js/amplify.min.js" type="text/javascript"></script>
     <script src="js/viewer.js" type="text/javascript"></script>
     <script src="js/app-brain.js" type="text/javascript"></script>
+    <script src="js/hierarchy.js" type="text/javascript"></script>
+    <script src="https://d3js.org/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
     <script src="js/cloud.js"></script>
     <script src="js/app-cloud.js" type="text/javascript"></script>
@@ -24,95 +27,72 @@
 
 <div id="page_container">
 
-    <a href="https://ehbeam.github.io/nke-viewer" target="_blank"><div id="title_container">
-        <center>
-            <img src="icons/logo.png" height="70px" width="70px" id="icon" />
-            <h1 id="title">Neuroscience Knowledge Engine</h1>
-        </center>
+    <a href="https://ehbeam.github.io/nke-viewer">
+    <div id="title_container"><img src="icons/favicon.png" id="icon" />
+        <h1 id="title"> 
+            <span style="margin-left:-5px">neuroscience</span><br/>
+            <span style="margin-left:5px">knowledge</span><br/>
+            <span style="margin-left:5px">engine</span>
+        </h1>
     </div></a>
+
+    <div style="margin-left:340px;margin-top:-100px">
+        <button class="view-button" style="width:477px;margin-right:20px" onClick="loadDomains()">Domains</button>
+        <button class="view-button" style="width:197px;margin-right:-3px" onClick="loadHierarchy()">Hierarchy</button>
+    </div>
 
     <div>
         <div>
-            <div id="button_container">
-            <center>
-                <p style="display:inline;">Number of Domains &nbsp;</p>
-                <button onClick="loadBrainMap(2);loadWordCloud(2);">2</button>
-                <button onClick="loadBrainMap(3);loadWordCloud(3)">3</button>
-                <button onClick="loadBrainMap(4);loadWordCloud(4)">4</button>
-                <button onClick="loadBrainMap(5);loadWordCloud(5)">5</button>
-                <button onClick="loadBrainMap(6);loadWordCloud(6)">6</button>
-                <button onClick="loadBrainMap(7);loadWordCloud(7)">7</button>
-                <button onClick="loadBrainMap(8);loadWordCloud(8)">8</button>
-                <button onClick="loadBrainMap(9);loadWordCloud(9)">9</button>
-                <button onClick="loadBrainMap(10);loadWordCloud(10)">10</button>
-                <button onClick="loadBrainMap(11);loadWordCloud(11)">11</button>
-                <button onClick="loadBrainMap(12);loadWordCloud(12)">12</button>
-                <button onClick="loadBrainMap(13);loadWordCloud(13)">13</button>
-                <button onClick="loadBrainMap(14);loadWordCloud(14)">14</button>
-                <button onClick="loadBrainMap(15);loadWordCloud(15)">15</button>
-                <button onClick="loadBrainMap(16);loadWordCloud(16)">16</button>
-                <button onClick="loadBrainMap(17);loadWordCloud(17)">17</button>
-                <button onClick="loadBrainMap(18);loadWordCloud(18)">18</button>
-                <button onClick="loadBrainMap(19);loadWordCloud(19)">19</button>
-                <button onClick="loadBrainMap(20);loadWordCloud(20)">20</button>
-                <button onClick="loadBrainMap(21);loadWordCloud(21)">21</button>
-                <button onClick="loadBrainMap(22);loadWordCloud(22)">22</button>
-                <button onClick="loadBrainMap(23);loadWordCloud(23)">23</button>
-                <button onClick="loadBrainMap(24);loadWordCloud(24)">24</button>
-                <button onClick="loadBrainMap(25);loadWordCloud(25)">25</button>
+            <div id="button_container" style="margin-left:347px">
+                <button class="n-domains" onClick="loadBrainMap(2);loadWordCloud(2);">2</button>
+                <button class="n-domains" onClick="loadBrainMap(3);loadWordCloud(3)">3</button>
+                <button class="n-domains" onClick="loadBrainMap(4);loadWordCloud(4)">4</button>
+                <button class="n-domains" onClick="loadBrainMap(5);loadWordCloud(5)">5</button>
+                <button class="n-domains" onClick="loadBrainMap(6);loadWordCloud(6)">6</button>
+                <button class="n-domains" onClick="loadBrainMap(7);loadWordCloud(7)">7</button>
+                <button class="n-domains" onClick="loadBrainMap(8);loadWordCloud(8)">8</button>
+                <button class="n-domains" onClick="loadBrainMap(9);loadWordCloud(9)">9</button>
+                <button class="n-domains" onClick="loadBrainMap(10);loadWordCloud(10)">10</button>
+                <button class="n-domains" onClick="loadBrainMap(11);loadWordCloud(11)">11</button>
+                <button class="n-domains" onClick="loadBrainMap(12);loadWordCloud(12)">12</button>
+                <button class="n-domains" onClick="loadBrainMap(13);loadWordCloud(13)">13</button>
+                <button class="n-domains" onClick="loadBrainMap(14);loadWordCloud(14)">14</button>
+                <button class="n-domains" onClick="loadBrainMap(15);loadWordCloud(15)">15</button>
+                <button class="n-domains" onClick="loadBrainMap(16);loadWordCloud(16)">16</button>
+                <button class="n-domains" onClick="loadBrainMap(17);loadWordCloud(17)">17</button>
+                <button class="n-domains" onClick="loadBrainMap(18);loadWordCloud(18)">18</button>
+                <button class="n-domains" onClick="loadBrainMap(19);loadWordCloud(19)">19</button>
+                <button class="n-domains" onClick="loadBrainMap(20);loadWordCloud(20)">20</button>
+                <button class="n-domains" onClick="loadBrainMap(21);loadWordCloud(21)">21</button>
+                <button class="n-domains" onClick="loadBrainMap(22);loadWordCloud(22)">22</button>
+                <button class="n-domains" onClick="loadBrainMap(23);loadWordCloud(23)">23</button>
+                <button class="n-domains" onClick="loadBrainMap(24);loadWordCloud(24)">24</button>
+                <button class="n-domains" onClick="loadBrainMap(25);loadWordCloud(25)">25</button>
                 <br/><br/>
-            </center>
             </div>
         </div>
     </div>
 
-    <div class='container'>
-        <div class='view' id='view_coronal'>
-            <canvas height='220' id='cor_canvas' width='220'></canvas>
-            <div class='slider nav-slider-vertical' id='nav-yaxis' style="float:left"></div>
-        </div>
-        <div class='view' id='view_sagittal'>
-            <canvas height='220' id='sag_canvas' width='264'></canvas>
-            <div class='slider nav-slider-horizontal' id='nav-xaxis'></div>
-        </div>
-        <div class='view' id='view_axial'>
-            <canvas height='220' id='axial_canvas' width='183'></canvas>
-            <div class='slider nav-slider-vertical' id='nav-zaxis' style="float:right"></div>
-        </div>
-        <div id="viewer_panel" align="center" >
-            <div id="layer_list_panel" align="center">
-                <p>Layers</p>
-                <div id="layer_visible_list" align="center"></div>
-                <ul id="layer_list" class="layer_settings" align="center">
-                </ul>
-            </div>
-            <div id="viewer_panel">
-                <div id="layer_list_panel">
-                    <div id="layer_visible_list"></div>
-                    <ul id="layer_list" class="layer_settings">
-                    </ul>
-                </div>
-                <p>Opacity</p>
-                <div id="opacity_panel" align="left">
-                    <select id="select_color" class="layer_settings" style="display:none"></select>
-                    <div class='slider layer_settings' id='opacity' align="center" style="width:195px"></div>
-                </div>
-                <p id="value_title">Voxel Value</p>
-                <div id="value_panel" align="left">
-                    <a href="#" id="value_data_tooltip" data-tooltip="Select a domain number to see its mapping">
-                        <span id="value_data"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br/><br/><br/>
+    <br/>
 
+    <div class="container" id="intro_container">
+        <br/>
+        <img src="icons/gears.gif" style="width:590px;margin-left:175px" style="float:left"/>
+        <span class="intro-text" style="margin-left:768px;margin-top:-298px;float:left">
+            &nbsp;&nbsp;&nbsp;&nbsp;<b>18,155</b> neuroimaging articles<br/><br/>
+            <b>605,292</b> brain coordinates<br/><br/>
+            &nbsp;&nbsp;&nbsp;<b>4,831,488</b> function terms<br/><br/>
+        </span>
+    </div>
+
+    <div class="container" id="domain_container"></div>
     <div id="chart"></div>
+    <div id="hierarchy"></div>
     <div id="footer">
         <center>
             <a href="https://github.com/ehbeam/nke-viewer" target="_blank"><img src="icons/github.png" height="28px" class="footer_icon" /></a>
-            <a href="mailto: ebeam@stanford.edu"><img src="icons/email.png" height="28px" class="footer_icon" /></a>
+            <a href="https://www.biorxiv.org/content/10.1101/701540v1.abstract" target="_blank"><img src="icons/icon_paper.png" height="28px" class="footer_icon" /></a>
+            <a href="mailto: ebeam@stanford.edu"><img src="icons/icon_email.png" height="28px" class="footer_icon" /></a>
         </center>
     </div>
 

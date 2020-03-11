@@ -30,9 +30,22 @@ var names = { 2: ['Arousal', 'Manipulation'],
               24: ['Memory', 'Episodic Memory', 'Retrieval', 'Recall', 'Encoding', 'Recognition', 'Feedback', 'Pain', 'Emotion', 'Salience', 'Reward', 'Decision Making', 'Valence', 'Anticipation', 'Arousal', 'Reaction Time', 'Execution', 'Cognitive Process', 'Perception', 'Vision', 'Speech', 'Language', 'Manipulation', 'Word'], 
               25: ['Memory', 'Episodic Memory', 'Encoding', 'Retrieval', 'Familiarity', 'Recognition', 'Recall', 'Feedback', 'Fear', 'Emotion', 'Reward', 'Decision Making', 'Anticipation', 'Arousal', 'Cognitive', 'Manipulation', 'Vision', 'Preparation', 'Social Cognition', 'Perception', 'Language', 'Hearing', 'Language Processing', 'Meaning', 'Word']}
 
+var viewerHTML = "<div class='view' id='view_coronal' style='margin-left:15px'><canvas height='220' id='cor_canvas' width='220'></canvas><div class='slider nav-slider-vertical' id='nav-yaxis' style='float:left'></div></div><div class='view' id='view_sagittal'><canvas height='220' id='sag_canvas' width='264'></canvas><div class='slider nav-slider-horizontal' id='nav-xaxis'></div></div><div class='view' id='view_axial'><canvas height='220' id='axial_canvas' width='183'></canvas><div class='slider nav-slider-vertical' id='nav-zaxis' style='float:right'></div></div><div align='center' style='width:200px;float:left'><div id='layer_list_panel' align='center'><p style='margin-left:0px;'>Layers</p><div id='layer_visible_list' align='center'></div><ul id='layer_list' class='layer_settings' align='center'></ul></div><div id='viewer_panel'><div id='layer_list_panel'><div id='layer_visible_list'></div><ul id='layer_list' class='layer_settings'></ul></div><p style='margin-left:-15px;'>Opacity</p><div id='opacity_panel' align='left'><select id='select_color' class='layer_settings' style='display:none'></select><div class='slider layer_settings' id='opacity' align='center' style='width:195px'></div></div><p id='value_title' style='margin-left:-15px;'>Voxel Value</p><div id='value_panel' align='left'><a href='#' id='value_data_tooltip' data-tooltip='Select a domain number to see its mapping'><span id='value_data'></span></a></div></div></div>";
+
 function pad(number) { return (number < 10 ? '0' : '') + number };
 
+function loadDomains() {
+    document.getElementById("intro_container").style.display = "none";
+    document.getElementById("domain_container").innerHTML = viewerHTML;
+    document.getElementById("chart").innerHTML = "";
+    loadBrainMap(0)
+}
+
 function loadBrainMap(k) {
+
+    document.getElementById("intro_container").style.display = "none";
+    document.getElementById("chart").style.display = "inline-block";
+    document.getElementById("domain_container").innerHTML = viewerHTML;
 
     viewer = new Viewer('#layer_list', '.layer_settings');
     viewer.addView('#view_axial', Viewer.AXIAL);
@@ -44,14 +57,6 @@ function loadBrainMap(k) {
     viewer.addSlider("nav-zaxis", ".slider#nav-zaxis", "vertical", 0, 1, 0.5, 0.01, Viewer.ZAXIS);
     viewer.clear()   // Paint canvas background while images load
     
-    images = [{
-                'url': 'data/MNI152_T1_2mm_brain.nii.gz',
-                'name': 'MNI152',
-                'colorPalette': 'grayscale',
-                'cache': false,
-            }];
-    viewer.loadImages(images);
-
     images = [{
                 'url': 'data/MNI152_T1_2mm_brain.nii.gz',
                 'name': 'MNI152',
@@ -72,25 +77,3 @@ function loadBrainMap(k) {
     viewer.loadImages(images);
 
 };
-
-jQuery(document).ready(function() {
-
-    viewer = new Viewer('#layer_list', '.layer_settings');
-    viewer.addView('#view_axial', Viewer.AXIAL);
-    viewer.addView('#view_coronal', Viewer.CORONAL);
-    viewer.addView('#view_sagittal', Viewer.SAGITTAL);
-    viewer.addSlider('opacity', '.slider#opacity', 'horizontal', 0, 1, 1, 0.05);
-    viewer.addSlider("nav-xaxis", ".slider#nav-xaxis", "horizontal", 0, 1, 0.5, 0.01, Viewer.XAXIS);
-    viewer.addSlider("nav-yaxis", ".slider#nav-yaxis", "vertical", 0, 1, 0.5, 0.01, Viewer.YAXIS);
-    viewer.addSlider("nav-zaxis", ".slider#nav-zaxis", "vertical", 0, 1, 0.5, 0.01, Viewer.ZAXIS);
-    viewer.clear()   // Paint canvas background while images load
-    
-    images = [{
-                'url': 'data/MNI152_T1_2mm_brain.nii.gz',
-                'name': 'MNI152',
-                'colorPalette': 'grayscale',
-                'cache': false,
-            }];
-    viewer.loadImages(images);
-
-});
