@@ -156,7 +156,8 @@ button:focus {
 }
 
 #footer {
-    margin-top: 25px;
+    position: relative;
+    margin-top: 255px;
     margin-bottom: 50px;
     margin-left: 940px;
 }
@@ -353,10 +354,11 @@ canvas {
 }
 
 #data_panel {
+    margin-left: 10px;
     margin-top: 20px;
+    margin-bottom: 50px;
     float: left;
     font: 12px;
-    margin-left: 10px;
     border-color: black;
 }
 
@@ -478,6 +480,7 @@ ul#layer_list {
 
 #hierarchy {
   margin-top: -200px;
+  margin-bottom: -200px;
 }
 
 .node {
