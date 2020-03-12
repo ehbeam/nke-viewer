@@ -1,1 +1,9 @@
 theme: jekyll-theme-minimal
+language: english
+format: web
+favicon: icons/favicon.png
+logo: icons/favicon.png
+search_in_topnav: false
+search_in_sidebar: false
+toggle-sidebar-button: false
+navbar-toggle: false
