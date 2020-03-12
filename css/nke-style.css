@@ -135,7 +135,11 @@ button:focus {
     vertical-align: bottom;
 }
 
-.intro-text {
+#intro_container {
+  float: left;
+}
+
+.intro_text {
   letter-spacing: 2px;
   font-size: 12px;
   color: gray;
