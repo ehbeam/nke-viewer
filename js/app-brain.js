@@ -38,6 +38,7 @@ function loadDomains() {
     document.getElementById("intro_container").style.display = "none";
     document.getElementById("domain_container").innerHTML = viewerHTML;
     document.getElementById("chart").innerHTML = "";
+    document.getElementById("hierarchy").innerHTML = "";
     loadBrainMap(0)
 }
 
