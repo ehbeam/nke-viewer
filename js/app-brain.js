@@ -45,8 +45,9 @@ function loadDomains() {
 function loadBrainMap(k) {
 
     document.getElementById("intro_container").style.display = "none";
-    document.getElementById("chart").style.display = "inline-block";
     document.getElementById("domain_container").innerHTML = viewerHTML;
+    document.getElementById("chart").style.display = "inline-block";
+    document.getElementById("hierarchy").innerHTML = "";
 
     viewer = new Viewer('#layer_list', '.layer_settings');
     viewer.addView('#view_axial', Viewer.AXIAL);
