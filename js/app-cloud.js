@@ -12,7 +12,6 @@ var titlePalette = ["rgba(117, 151, 208, 0.5)", "rgba(176, 126, 182, 0.5)", "rgb
                     "rgba(255, 123, 91, 0.5)", "rgba(114, 102, 42, 0.5)", "rgba(145, 229, 128, 0.5)", "rgba(188, 213, 255, 0.5)", "rgba(226, 145, 221, 0.5)",
                     "rgba(139, 117, 234, 0.5)", "rgba(224, 189, 132, 0.5)", "rgba(214, 79, 124, 0.5)", "rgba(164, 234, 202, 0.5)", "rgba(244, 255, 107, 0.5)"];
 
-
 function pad(number) { return (number < 10 ? "0" : "") + number };
 
 function toTitleCase(str) {
@@ -25,8 +24,8 @@ function toTitleCase(str) {
 
 function loadWordCloud(n_domains) {
 
-    document.getElementById("chart").innerHTML = "";
-
+    document.getElementById("chart").innerHTML = "<div id='chart1' class='subchart' style='left:0px;top:0px;'></div><div id='chart2' class='subchart' style='left:193px;top:0px;'></div><div id='chart3' class='subchart' style='left:386px;top:0px;'></div><div id='chart4' class='subchart' style='left:579px;top:0px;'></div><div id='chart5' class='subchart' style='left:0px;top:165px;'></div><div id='chart6' class='subchart' style='left:193px;top:165px;'></div><div id='chart7' class='subchart' style='left:386px;top:165px;'></div><div id='chart8' class='subchart' style='left:579px;top:165px;'></div><div id='chart9' class='subchart' style='left:0px;top:330px;'></div><div id='chart10' class='subchart' style='left:193px;top:330px;'></div><div id='chart11' class='subchart' style='left:386px;top:330px;'></div><div id='chart12' class='subchart' style='left:579px;top:330px;'></div><div id='chart13' class='subchart' style='left:0px;top:495px;'></div><div id='chart14' class='subchart' style='left:193px;top:495px;'></div><div id='chart15' class='subchart' style='left:386px;top:495px;'></div><div id='chart16' class='subchart' style='left:579px;top:495px;'></div><div id='chart17' class='subchart' style='left:0px;top:660px;'></div><div id='chart18' class='subchart' style='left:193px;top:660px;'></div><div id='chart19' class='subchart' style='left:386px;top:660px;'></div><div id='chart20' class='subchart' style='left:579px;top:660px;'></div><div id='chart21' class='subchart' style='left:0px;top:825px;'></div><div id='chart22' class='subchart' style='left:193px;top:825px;'></div><div id='chart23' class='subchart' style='left:386px;top:825px;'></div><div id='chart24' class='subchart' style='left:579px;top:825px;'></div><div id='chart25' class='subchart' style='left:0px;top:990px;'></div>"
+    
     var file = "data/k" + pad(n_domains) + "/words_k" + pad(n_domains) + ".csv";
 
     d3.csv(file, function(data) {
@@ -42,8 +41,8 @@ function loadWordCloud(n_domains) {
               for (var word_i = 0; word_i < count; word_i++) {
                 domain_words.push(term);
               }
-              // var name = toTitleCase(data[row_i]["DOMAIN"].replace(/_/g, " "));
-              var name = data[row_i]["DOMAIN"].replace(/_/g, " ").toLowerCase();
+              var name = toTitleCase(data[row_i]["DOMAIN"].replace(/_/g, " "));
+              // var name = data[row_i]["DOMAIN"].replace(/_/g, " ").toLowerCase();
             }
         };
     
@@ -64,9 +63,10 @@ d3.selection.prototype.moveToFront = function() {
 
 function drawWordCloud(words, name, i){
 
+  var svg_location = "#chart" + (i+1);
+  var width = 193, height = 130;
   var color = cloudPalette[i];
   var titleColor = titlePalette[i];
-
   var word_count = {};
 
   if (words.length == 1){
@@ -83,10 +83,6 @@ function drawWordCloud(words, name, i){
         }
       })
     }
-
-  var svg_location = "#chart";
-  var width = 193; 
-  var height = 130;
 
   var word_entries = d3.entries(word_count);
 
@@ -126,7 +122,7 @@ function drawWordCloud(words, name, i){
       // .style("box-shadow", "2px 2px 3px #757575");
 
     // Draw the word cloud
-    d3.select(svg_location).append("svg")
+    d3.select(svg_location).insert("svg")
         .attr("width", width)
         .attr("height", height + 35)
       .append("g")
@@ -161,21 +157,36 @@ function drawWordCloud(words, name, i){
           return tooltip.style("visibility", "hidden")
         });
 
-    // // Add the plot title
-    // d3.select(svg_location).append("text")
-    //   .style("font-size", "0px")
-    //   .style("font-family", "Avenir")
-    //   .style("text-align", "center")
-    //   .style("background-color", "none")
-    //   .style("padding", "2px")
-    //   .style("padding-top", "3px")
-    //   .style("border-radius", "3px")
-    //   .style("position", "absolute")
-    //   .style("width", width - 8 + "px")
-    //   .style("margin-left", -1 * (width - 4) + "px")
-    //   .text(name);
+    // Add the plot title
+    d3.select(svg_location).insert("text")
+      .style("font-size", "12px")
+      .style("font-family", "Avenir")
+      .style("text-align", "center")
+      .style("background-color", color)
+      .style("opacity", 0.5)
+      .style("padding", "2px")
+      .style("padding-top", "3px")
+      .style("border-radius", "3px")
+      .style("position", "absolute")
+      .style("height", "22px")
+      .style("width", width - 8 + "px")
+      .style("margin-left", -1 * (width - 4) + "px")
+      .text(" ");
+
+    d3.select(svg_location).insert("text")
+      .style("font-size", "12px")
+      .style("font-family", "Avenir")
+      .style("text-align", "center")
+      .style("padding", "2px")
+      .style("padding-top", "3px")
+      .style("border-radius", "3px")
+      .style("position", "absolute")
+      .style("width", width - 8 + "px")
+      .style("margin-left", -1 * (width - 4) + "px")
+      .text(name);
     }
 
     d3.layout.cloud().stop();
+    console.log(document.getElementById("chart"))
 
 }

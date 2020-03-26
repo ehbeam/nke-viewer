@@ -3,11 +3,10 @@ function loadHierarchy() {
   document.getElementById("intro_container").style.display = "none";
   document.getElementById("domain_container").innerHTML = "";
   document.getElementById("chart").innerHTML = "";
-  document.getElementById("hierarchy").innerHTML = "";
 
   d3.json("data/hierarchy.json", function(treeData) {
     
-    var svg_location = "#hierarchy";
+    var svg_loc = "#hierarchy";
 
     var margin = {top: 50, right: 300, bottom: 50, left: -110}
         width = 1220 - margin.right - margin.left,
@@ -34,7 +33,7 @@ function loadHierarchy() {
       });
     };
 
-    var svg = d3.select(svg_location).append("svg")
+    var svg_hier = d3.select(svg_loc).append("svg")
       .attr("width", width + margin.right + margin.left)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
@@ -112,7 +111,7 @@ function loadHierarchy() {
         links = tree.links(nodes);
 
       // Declare the nodes…
-      var node = svg.selectAll("g.node")
+      var node = svg_hier.selectAll("g.node")
         .data(nodes, function(d) { return d.id || (d.id = ++i); });
 
       // Enter the nodes.
@@ -188,7 +187,7 @@ function loadHierarchy() {
           .style("fill-opacity", 1e-6);
 
       // Update the links
-      var link = svg.selectAll("path.link")
+      var link = svg_hier.selectAll("path.link")
           .data(links, function(d) { return d.target.id; });
 
       // Enter any new links at the parent's previous position.

@@ -177,9 +177,20 @@ button:focus {
     width: 772px;
     padding: 0px;
     position: absolute;
-    top: 405px;
+    top: 425px;
     margin-left: 55px;
     margin-right: 25px;
+    cursor: default;
+}
+
+.subchart {
+    display: block;
+    width: 193px;
+    height: 130px;
+    padding: 0px;
+    position: absolute;
+    margin-left: 0px;
+    margin-right: 0px;
     cursor: default;
 }
 
