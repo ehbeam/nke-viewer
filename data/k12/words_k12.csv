@@ -1,176 +1,176 @@
-CLUSTER,TOKEN,R,ROC_AUC,DOMAIN
-1,memory,0.1842678630334148,0.6313581763168281,Memory
-1,episodic_memory,0.17001285046848968,0.6313581763168281,Memory
-1,retrieval,0.15386861696742218,0.6313581763168281,Memory
-1,recognition_memory,0.15086877164469434,0.6313581763168281,Memory
-1,remembering,0.14861914535650694,0.6313581763168281,Memory
-1,declarative_memory,0.14426759468153105,0.6313581763168281,Memory
-1,recognition,0.1336110651181031,0.6313581763168281,Memory
-1,semantic_memory,0.12730357581856902,0.6313581763168281,Memory
-1,encoding,0.12631938815766156,0.6313581763168281,Memory
-1,familiarity,0.12556456330256474,0.6313581763168281,Memory
-1,recall,0.12330081879637456,0.6313581763168281,Memory
-1,episodic_simulation,0.1197757580159026,0.6313581763168281,Memory
-1,autobiographical_memory,0.11973815415411125,0.6313581763168281,Memory
-1,source_memory,0.1182365919774152,0.6313581763168281,Memory
-1,encoding_task,0.1114048197853397,0.6313581763168281,Memory
-1,semantic_knowledge,0.1081221808009932,0.6313581763168281,Memory
-1,memory_process,0.10421154680913364,0.6313581763168281,Memory
-1,spatial_memory,0.10243859294407978,0.6313581763168281,Memory
-1,memory_retrieval,0.10086048689910626,0.6313581763168281,Memory
-1,picture,0.1007007929076926,0.6313581763168281,Memory
-1,semantic_information,0.09780524217892714,0.6313581763168281,Memory
-1,remote_memory,0.09777020975050496,0.6313581763168281,Memory
-1,free_recall,0.09743491473810692,0.6313581763168281,Memory
-1,forgetting,0.09583679230181044,0.6313581763168281,Memory
-2,memory,0.13530054778187878,0.6064353498016759,Episodic Memory
-2,episodic_memory,0.13324024775179502,0.6064353498016759,Episodic Memory
-2,remembering,0.12763204466615916,0.6064353498016759,Episodic Memory
-2,retrieval,0.12454201662262593,0.6064353498016759,Episodic Memory
-2,memory_retrieval,0.12345856115813915,0.6064353498016759,Episodic Memory
-2,autobiographical_memory,0.10759434459918296,0.6064353498016759,Episodic Memory
-2,visual_imagery,0.10128703431049284,0.6064353498016759,Episodic Memory
-2,encoding,0.09928335759143396,0.6064353498016759,Episodic Memory
-2,recall,0.0966976447581018,0.6064353498016759,Episodic Memory
-2,prospection,0.09373031656484336,0.6064353498016759,Episodic Memory
-2,source_memory,0.09248868539037937,0.6064353498016759,Episodic Memory
-2,recognition_memory,0.09207949549086104,0.6064353498016759,Episodic Memory
-2,episodic_simulation,0.0917505458843462,0.6064353498016759,Episodic Memory
-2,navigation,0.09067174350012216,0.6064353498016759,Episodic Memory
-2,mental_imagery,0.08752394774224412,0.6064353498016759,Episodic Memory
-2,spatial_memory,0.08674023841257268,0.6064353498016759,Episodic Memory
-2,familiarity,0.08269600233016698,0.6064353498016759,Episodic Memory
-2,visual_attention,0.07973726456024155,0.6064353498016759,Episodic Memory
-2,imagery,0.07949161267411567,0.6064353498016759,Episodic Memory
-2,episodic_future_thinking,0.07751212440420074,0.6064353498016759,Episodic Memory
-2,spatial_attention,0.07566877352567343,0.6064353498016759,Episodic Memory
-2,imagine,0.0752258819373452,0.6064353498016759,Episodic Memory
-2,theory_mind,0.07395100023724044,0.6064353498016759,Episodic Memory
-3,fear,0.2253748149966777,0.6687382097676836,Emotion
-3,emotion,0.22490248573023908,0.6687382097676836,Emotion
-3,facial_expression,0.19289377893059487,0.6687382097676836,Emotion
-3,valence,0.19162499208763167,0.6687382097676836,Emotion
-3,arousal,0.17379363811189552,0.6687382097676836,Emotion
-3,memory,0.16396216012350553,0.6687382097676836,Emotion
-3,emotional_memory,0.15742458328789266,0.6687382097676836,Emotion
-3,face,0.15691201703696347,0.6687382097676836,Emotion
-3,declarative_memory,0.15152256637722095,0.6687382097676836,Emotion
-4,reward,0.29352588387123524,0.6389169301340427,Reward
-4,reward_anticipation,0.2397623121499023,0.6389169301340427,Reward
-4,reward_processing,0.23389849061825885,0.6389169301340427,Reward
-4,monetary_incentive_delay_task,0.1774497023393803,0.6389169301340427,Reward
-4,anticipation,0.17315540111843564,0.6389169301340427,Reward
-4,reward_learning,0.14962843311871726,0.6389169301340427,Reward
-4,instrumental_conditioning,0.14662784796513026,0.6389169301340427,Reward
-4,decision_making,0.13169207275174633,0.6389169301340427,Reward
-4,loss_anticipation,0.12715577283202667,0.6389169301340427,Reward
-4,expectancy,0.126457300422248,0.6389169301340427,Reward
-4,reinforcement_learning,0.12589140192832726,0.6389169301340427,Reward
-4,gambling,0.12337281450294454,0.6389169301340427,Reward
-4,addiction,0.12267993151419206,0.6389169301340427,Reward
-4,feedback,0.11722826983186704,0.6389169301340427,Reward
-4,loss,0.11173798544696016,0.6389169301340427,Reward
-4,taste,0.10454892127555476,0.6389169301340427,Reward
-4,wanting,0.10334603679329847,0.6389169301340427,Reward
-4,loss_aversion,0.10158717939594902,0.6389169301340427,Reward
-4,valence,0.10031386373366673,0.6389169301340427,Reward
-5,reward,0.23979522451657825,0.622929437045364,Anticipation
-5,reward_processing,0.19149335510761709,0.622929437045364,Anticipation
-5,reward_anticipation,0.18409881222266647,0.622929437045364,Anticipation
-5,anticipation,0.17002413398981164,0.622929437045364,Anticipation
-5,monetary_incentive_delay_task,0.1617206857771253,0.622929437045364,Anticipation
-5,instrumental_conditioning,0.12359420395343025,0.622929437045364,Anticipation
-6,monitoring,0.13349582097284204,0.6141837790929505,Reaction Time
-6,arousal,0.12701919208398876,0.6141837790929505,Reaction Time
-6,anticipation,0.12338987191319715,0.6141837790929505,Reaction Time
-6,decision_making,0.11737378438885213,0.6141837790929505,Reaction Time
-6,reward,0.1152405991848696,0.6141837790929505,Reaction Time
-6,pain,0.10415133562471816,0.6141837790929505,Reaction Time
-6,error_detection,0.10062994137658687,0.6141837790929505,Reaction Time
-6,salience,0.09914191890619334,0.6141837790929505,Reaction Time
-6,valence,0.09799169650838356,0.6141837790929505,Reaction Time
-6,cognitive_control,0.09693730944482253,0.6141837790929505,Reaction Time
-6,expectancy,0.0881349538480615,0.6141837790929505,Reaction Time
-6,interoception,0.08693198122504024,0.6141837790929505,Reaction Time
-6,response_selection,0.08654601070737097,0.6141837790929505,Reaction Time
-6,reward_processing,0.08637415997557311,0.6141837790929505,Reaction Time
-6,strategy,0.08585196013458601,0.6141837790929505,Reaction Time
-6,reaction_time,0.08346531514260855,0.6141837790929505,Reaction Time
-6,painful_stimulation,0.08296216433596695,0.6141837790929505,Reaction Time
-6,autobiographical_memory,0.08224003466454521,0.6141837790929505,Reaction Time
-6,emotion,0.08193535985495598,0.6141837790929505,Reaction Time
-6,performance_monitoring,0.08124739572749147,0.6141837790929505,Reaction Time
-7,execution,0.1863805346193372,0.6247031818577582,Representation
-7,hand,0.1644027324060488,0.6247031818577582,Representation
-7,movement,0.1451484806229898,0.6247031818577582,Representation
-7,spatial_attention,0.1391285030602546,0.6247031818577582,Representation
-7,attention,0.13461711297246906,0.6247031818577582,Representation
-7,grasping,0.13440169365655294,0.6247031818577582,Representation
-7,manipulation,0.13068216674836386,0.6247031818577582,Representation
-7,working_memory,0.12837732607283994,0.6247031818577582,Representation
-7,action,0.12824271040772675,0.6247031818577582,Representation
-7,representation,0.12511835587634848,0.6247031818577582,Representation
-7,grasp,0.12105035142967475,0.6247031818577582,Representation
-7,rehearsal,0.11864858140436085,0.6247031818577582,Representation
-8,face_perception,0.1877639807304712,0.6500500772242318,Vision
-8,recognition,0.16410051338312606,0.6500500772242318,Vision
-8,object_recognition,0.16314390484844685,0.6500500772242318,Vision
-8,vision,0.1559273892650827,0.6500500772242318,Vision
-8,familiarity,0.14581854105574574,0.6500500772242318,Vision
-8,face,0.1430670056043644,0.6500500772242318,Vision
-8,visual_perception,0.13563953175726018,0.6500500772242318,Vision
-8,visual_object,0.1351722363214991,0.6500500772242318,Vision
-8,picture,0.130512029634305,0.6500500772242318,Vision
-8,face_recognition,0.13042936911208536,0.6500500772242318,Vision
-8,visual_angle,0.12874586670330285,0.6500500772242318,Vision
-8,reading,0.12712635167239567,0.6500500772242318,Vision
-9,working_memory,0.1558595532980448,0.6344476793871306,Manipulation
-9,word,0.1541885173336947,0.6344476793871306,Manipulation
-9,language,0.15132742753268502,0.6344476793871306,Manipulation
-9,semantic_processing,0.14959654465589306,0.6344476793871306,Manipulation
-9,semantics,0.1368370817902041,0.6344476793871306,Manipulation
-9,reaction_time,0.1358592853221267,0.6344476793871306,Manipulation
-9,retrieval,0.13541739179067985,0.6344476793871306,Manipulation
-9,language_processing,0.13347489305356208,0.6344476793871306,Manipulation
-9,manipulation,0.13069740740251,0.6344476793871306,Manipulation
-9,cognitive_process,0.12584786237362214,0.6344476793871306,Manipulation
-9,rehearsal,0.12580496737206595,0.6344476793871306,Manipulation
-9,meaning,0.12259246624009698,0.6344476793871306,Manipulation
-9,sentence_comprehension,0.11899152456702447,0.6344476793871306,Manipulation
-9,phonological_processing,0.11848123092249313,0.6344476793871306,Manipulation
-9,cognitive_control,0.11745195685163927,0.6344476793871306,Manipulation
-9,syntax,0.11699225218681325,0.6344476793871306,Manipulation
-9,sentence_processing,0.11573814145867085,0.6344476793871306,Manipulation
-9,language_comprehension,0.11377920456403018,0.6344476793871306,Manipulation
-9,monitoring,0.11262916884302893,0.6344476793871306,Manipulation
-9,phonology,0.11222971818727344,0.6344476793871306,Manipulation
-10,motor_control,0.13409126458258294,0.5845126846348916,Execution
-10,movement,0.11246531448298708,0.5845126846348916,Execution
-10,motor_learning,0.11132113642537923,0.5845126846348916,Execution
-10,execution,0.11011500264725564,0.5845126846348916,Execution
-10,coordination,0.08957903886763276,0.5845126846348916,Execution
-10,motor_sequence_learning,0.08209866426220941,0.5845126846348916,Execution
-11,hearing,0.2003300580118864,0.6528576440674264,Hearing
-11,listening,0.1870635265022667,0.6528576440674264,Hearing
-11,speech,0.1844450158563722,0.6528576440674264,Hearing
-11,speech_perception,0.1667886739474331,0.6528576440674264,Hearing
-11,speech_processing,0.16288139657471395,0.6528576440674264,Hearing
-11,tone,0.16146168370924466,0.6528576440674264,Hearing
-11,music,0.14520153938208988,0.6528576440674264,Hearing
-11,melody,0.1394035583082508,0.6528576440674264,Hearing
-11,passive_listening,0.13701467728511108,0.6528576440674264,Hearing
-11,auditory_perception,0.12798509624228235,0.6528576440674264,Hearing
-11,audition,0.12131926800921147,0.6528576440674264,Hearing
-11,speech_production,0.11958585635644167,0.6528576440674264,Hearing
-11,painful_stimulation,0.11462822813733392,0.6528576440674264,Hearing
-11,pain,0.1128543540708703,0.6528576440674264,Hearing
-12,speech,0.2604608144810881,0.6610899807500761,Language
-12,speech_perception,0.23116001001971165,0.6610899807500761,Language
-12,speech_processing,0.2307178917339015,0.6610899807500761,Language
-12,listening,0.2300039332403445,0.6610899807500761,Language
-12,hearing,0.2263522555045085,0.6610899807500761,Language
-12,language,0.21627504147306773,0.6610899807500761,Language
-12,language_processing,0.20125644954886124,0.6610899807500761,Language
-12,syllable,0.17778879410039594,0.6610899807500761,Language
-12,semantic_processing,0.1638517969619926,0.6610899807500761,Language
-12,language_comprehension,0.1628621914463649,0.6610899807500761,Language
+DOMAIN,CLUSTER,TOKEN,R,TITLE
+Memory,1,memory,0.1842678630334148,Memory
+Memory,1,episodic_memory,0.17001285046848968,Memory
+Memory,1,retrieval,0.15386861696742218,Memory
+Memory,1,recognition_memory,0.15086877164469434,Memory
+Memory,1,remembering,0.14861914535650694,Memory
+Memory,1,declarative_memory,0.14426759468153105,Memory
+Memory,1,recognition,0.1336110651181031,Memory
+Memory,1,semantic_memory,0.12730357581856902,Memory
+Memory,1,encoding,0.12631938815766156,Memory
+Memory,1,familiarity,0.12556456330256474,Memory
+Memory,1,recall,0.12330081879637456,Memory
+Memory,1,episodic_simulation,0.1197757580159026,Memory
+Memory,1,autobiographical_memory,0.11973815415411125,Memory
+Memory,1,source_memory,0.1182365919774152,Memory
+Memory,1,encoding_task,0.1114048197853397,Memory
+Memory,1,semantic_knowledge,0.1081221808009932,Memory
+Memory,1,memory_process,0.10421154680913364,Memory
+Memory,1,spatial_memory,0.10243859294407978,Memory
+Memory,1,memory_retrieval,0.10086048689910626,Memory
+Memory,1,picture,0.1007007929076926,Memory
+Memory,1,semantic_information,0.09780524217892714,Memory
+Memory,1,remote_memory,0.09777020975050496,Memory
+Memory,1,free_recall,0.09743491473810692,Memory
+Memory,1,forgetting,0.09583679230181044,Memory
+Episodic Memory,2,memory,0.13530054778187878,Episodic Memory
+Episodic Memory,2,episodic_memory,0.13324024775179502,Episodic Memory
+Episodic Memory,2,remembering,0.12763204466615916,Episodic Memory
+Episodic Memory,2,retrieval,0.12454201662262593,Episodic Memory
+Episodic Memory,2,memory_retrieval,0.12345856115813915,Episodic Memory
+Episodic Memory,2,autobiographical_memory,0.10759434459918296,Episodic Memory
+Episodic Memory,2,visual_imagery,0.10128703431049284,Episodic Memory
+Episodic Memory,2,encoding,0.09928335759143396,Episodic Memory
+Episodic Memory,2,recall,0.0966976447581018,Episodic Memory
+Episodic Memory,2,prospection,0.09373031656484336,Episodic Memory
+Episodic Memory,2,source_memory,0.09248868539037937,Episodic Memory
+Episodic Memory,2,recognition_memory,0.09207949549086104,Episodic Memory
+Episodic Memory,2,episodic_simulation,0.0917505458843462,Episodic Memory
+Episodic Memory,2,navigation,0.09067174350012216,Episodic Memory
+Episodic Memory,2,mental_imagery,0.08752394774224412,Episodic Memory
+Episodic Memory,2,spatial_memory,0.08674023841257268,Episodic Memory
+Episodic Memory,2,familiarity,0.08269600233016698,Episodic Memory
+Episodic Memory,2,visual_attention,0.07973726456024155,Episodic Memory
+Episodic Memory,2,imagery,0.07949161267411567,Episodic Memory
+Episodic Memory,2,episodic_future_thinking,0.07751212440420074,Episodic Memory
+Episodic Memory,2,spatial_attention,0.07566877352567343,Episodic Memory
+Episodic Memory,2,imagine,0.0752258819373452,Episodic Memory
+Episodic Memory,2,theory_mind,0.07395100023724044,Episodic Memory
+Emotion,3,fear,0.2253748149966777,Emotion
+Emotion,3,emotion,0.22490248573023908,Emotion
+Emotion,3,facial_expression,0.19289377893059487,Emotion
+Emotion,3,valence,0.19162499208763167,Emotion
+Emotion,3,arousal,0.17379363811189552,Emotion
+Emotion,3,memory,0.16396216012350553,Emotion
+Emotion,3,emotional_memory,0.15742458328789266,Emotion
+Emotion,3,face,0.15691201703696347,Emotion
+Emotion,3,declarative_memory,0.15152256637722095,Emotion
+Reward,4,reward,0.29352588387123524,Reward
+Reward,4,reward_anticipation,0.2397623121499023,Reward
+Reward,4,reward_processing,0.23389849061825885,Reward
+Reward,4,monetary_incentive_delay_task,0.1774497023393803,Reward
+Reward,4,anticipation,0.17315540111843564,Reward
+Reward,4,reward_learning,0.14962843311871726,Reward
+Reward,4,instrumental_conditioning,0.14662784796513026,Reward
+Reward,4,decision_making,0.13169207275174633,Reward
+Reward,4,loss_anticipation,0.12715577283202667,Reward
+Reward,4,expectancy,0.126457300422248,Reward
+Reward,4,reinforcement_learning,0.12589140192832726,Reward
+Reward,4,gambling,0.12337281450294454,Reward
+Reward,4,addiction,0.12267993151419206,Reward
+Reward,4,feedback,0.11722826983186704,Reward
+Reward,4,loss,0.11173798544696016,Reward
+Reward,4,taste,0.10454892127555476,Reward
+Reward,4,wanting,0.10334603679329847,Reward
+Reward,4,loss_aversion,0.10158717939594902,Reward
+Reward,4,valence,0.10031386373366673,Reward
+Anticipation,5,reward,0.23979522451657825,Anticipation
+Anticipation,5,reward_processing,0.19149335510761709,Anticipation
+Anticipation,5,reward_anticipation,0.18409881222266647,Anticipation
+Anticipation,5,anticipation,0.17002413398981164,Anticipation
+Anticipation,5,monetary_incentive_delay_task,0.1617206857771253,Anticipation
+Anticipation,5,instrumental_conditioning,0.12359420395343025,Anticipation
+Reaction Time,6,monitoring,0.13349582097284204,Reaction Time
+Reaction Time,6,arousal,0.12701919208398876,Reaction Time
+Reaction Time,6,anticipation,0.12338987191319715,Reaction Time
+Reaction Time,6,decision_making,0.11737378438885213,Reaction Time
+Reaction Time,6,reward,0.1152405991848696,Reaction Time
+Reaction Time,6,pain,0.10415133562471816,Reaction Time
+Reaction Time,6,error_detection,0.10062994137658687,Reaction Time
+Reaction Time,6,salience,0.09914191890619334,Reaction Time
+Reaction Time,6,valence,0.09799169650838356,Reaction Time
+Reaction Time,6,cognitive_control,0.09693730944482253,Reaction Time
+Reaction Time,6,expectancy,0.0881349538480615,Reaction Time
+Reaction Time,6,interoception,0.08693198122504024,Reaction Time
+Reaction Time,6,response_selection,0.08654601070737097,Reaction Time
+Reaction Time,6,reward_processing,0.08637415997557311,Reaction Time
+Reaction Time,6,strategy,0.08585196013458601,Reaction Time
+Reaction Time,6,reaction_time,0.08346531514260855,Reaction Time
+Reaction Time,6,painful_stimulation,0.08296216433596695,Reaction Time
+Reaction Time,6,autobiographical_memory,0.08224003466454521,Reaction Time
+Reaction Time,6,emotion,0.08193535985495598,Reaction Time
+Reaction Time,6,performance_monitoring,0.08124739572749147,Reaction Time
+Representation,7,execution,0.1863805346193372,Representation
+Representation,7,hand,0.1644027324060488,Representation
+Representation,7,movement,0.1451484806229898,Representation
+Representation,7,spatial_attention,0.1391285030602546,Representation
+Representation,7,attention,0.13461711297246906,Representation
+Representation,7,grasping,0.13440169365655294,Representation
+Representation,7,manipulation,0.13068216674836386,Representation
+Representation,7,working_memory,0.12837732607283994,Representation
+Representation,7,action,0.12824271040772675,Representation
+Representation,7,representation,0.12511835587634848,Representation
+Representation,7,grasp,0.12105035142967475,Representation
+Representation,7,rehearsal,0.11864858140436085,Representation
+Vision,8,face_perception,0.1877639807304712,Vision
+Vision,8,recognition,0.16410051338312606,Vision
+Vision,8,object_recognition,0.16314390484844685,Vision
+Vision,8,vision,0.1559273892650827,Vision
+Vision,8,familiarity,0.14581854105574574,Vision
+Vision,8,face,0.1430670056043644,Vision
+Vision,8,visual_perception,0.13563953175726018,Vision
+Vision,8,visual_object,0.1351722363214991,Vision
+Vision,8,picture,0.130512029634305,Vision
+Vision,8,face_recognition,0.13042936911208536,Vision
+Vision,8,visual_angle,0.12874586670330285,Vision
+Vision,8,reading,0.12712635167239567,Vision
+Manipulation,9,working_memory,0.1558595532980448,Manipulation
+Manipulation,9,word,0.1541885173336947,Manipulation
+Manipulation,9,language,0.15132742753268502,Manipulation
+Manipulation,9,semantic_processing,0.14959654465589306,Manipulation
+Manipulation,9,semantics,0.1368370817902041,Manipulation
+Manipulation,9,reaction_time,0.1358592853221267,Manipulation
+Manipulation,9,retrieval,0.13541739179067985,Manipulation
+Manipulation,9,language_processing,0.13347489305356208,Manipulation
+Manipulation,9,manipulation,0.13069740740250999,Manipulation
+Manipulation,9,cognitive_process,0.12584786237362214,Manipulation
+Manipulation,9,rehearsal,0.12580496737206595,Manipulation
+Manipulation,9,meaning,0.12259246624009698,Manipulation
+Manipulation,9,sentence_comprehension,0.11899152456702447,Manipulation
+Manipulation,9,phonological_processing,0.11848123092249313,Manipulation
+Manipulation,9,cognitive_control,0.11745195685163927,Manipulation
+Manipulation,9,syntax,0.11699225218681325,Manipulation
+Manipulation,9,sentence_processing,0.11573814145867085,Manipulation
+Manipulation,9,language_comprehension,0.11377920456403018,Manipulation
+Manipulation,9,monitoring,0.11262916884302893,Manipulation
+Manipulation,9,phonology,0.11222971818727344,Manipulation
+Execution,10,motor_control,0.13409126458258294,Execution
+Execution,10,movement,0.11246531448298708,Execution
+Execution,10,motor_learning,0.11132113642537923,Execution
+Execution,10,execution,0.11011500264725564,Execution
+Execution,10,coordination,0.08957903886763276,Execution
+Execution,10,motor_sequence_learning,0.08209866426220941,Execution
+Hearing,11,hearing,0.2003300580118864,Hearing
+Hearing,11,listening,0.1870635265022667,Hearing
+Hearing,11,speech,0.1844450158563722,Hearing
+Hearing,11,speech_perception,0.1667886739474331,Hearing
+Hearing,11,speech_processing,0.16288139657471395,Hearing
+Hearing,11,tone,0.16146168370924466,Hearing
+Hearing,11,music,0.14520153938208988,Hearing
+Hearing,11,melody,0.1394035583082508,Hearing
+Hearing,11,passive_listening,0.13701467728511108,Hearing
+Hearing,11,auditory_perception,0.12798509624228235,Hearing
+Hearing,11,audition,0.12131926800921147,Hearing
+Hearing,11,speech_production,0.11958585635644167,Hearing
+Hearing,11,painful_stimulation,0.11462822813733392,Hearing
+Hearing,11,pain,0.1128543540708703,Hearing
+Language,12,speech,0.2604608144810881,Language
+Language,12,speech_perception,0.23116001001971165,Language
+Language,12,speech_processing,0.2307178917339015,Language
+Language,12,listening,0.2300039332403445,Language
+Language,12,hearing,0.2263522555045085,Language
+Language,12,language,0.21627504147306773,Language
+Language,12,language_processing,0.20125644954886124,Language
+Language,12,syllable,0.17778879410039594,Language
+Language,12,semantic_processing,0.1638517969619926,Language
+Language,12,language_comprehension,0.1628621914463649,Language
