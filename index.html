@@ -37,40 +37,14 @@
     </div></a>
 
     <div style="margin-left:340px;margin-top:-100px">
-        <button class="view-button" style="width:477px;margin-right:20px" onClick="loadDomains()">Domains</button>
-        <button class="view-button" style="width:197px;margin-right:-3px" onClick="loadHierarchy()">Hierarchy</button>
+        <button class="view_button" style="width:477px;margin-right:20px" onClick="loadDomains()">Load Domains</button>
+        <button class="view_button" style="width:198px;margin-right:-3px" onClick="loadHierarchy()">Load Hierarchy</button>
     </div>
 
-    <div>
-        <div>
-            <div id="button_container" style="margin-left:347px">
-                <button class="n-domains" onClick="loadBrainMap(2);loadWordCloud(2);">2</button>
-                <button class="n-domains" onClick="loadBrainMap(3);loadWordCloud(3)">3</button>
-                <button class="n-domains" onClick="loadBrainMap(4);loadWordCloud(4)">4</button>
-                <button class="n-domains" onClick="loadBrainMap(5);loadWordCloud(5)">5</button>
-                <button class="n-domains" onClick="loadBrainMap(6);loadWordCloud(6)">6</button>
-                <button class="n-domains" onClick="loadBrainMap(7);loadWordCloud(7)">7</button>
-                <button class="n-domains" onClick="loadBrainMap(8);loadWordCloud(8)">8</button>
-                <button class="n-domains" onClick="loadBrainMap(9);loadWordCloud(9)">9</button>
-                <button class="n-domains" onClick="loadBrainMap(10);loadWordCloud(10)">10</button>
-                <button class="n-domains" onClick="loadBrainMap(11);loadWordCloud(11)">11</button>
-                <button class="n-domains" onClick="loadBrainMap(12);loadWordCloud(12)">12</button>
-                <button class="n-domains" onClick="loadBrainMap(13);loadWordCloud(13)">13</button>
-                <button class="n-domains" onClick="loadBrainMap(14);loadWordCloud(14)">14</button>
-                <button class="n-domains" onClick="loadBrainMap(15);loadWordCloud(15)">15</button>
-                <button class="n-domains" onClick="loadBrainMap(16);loadWordCloud(16)">16</button>
-                <button class="n-domains" onClick="loadBrainMap(17);loadWordCloud(17)">17</button>
-                <button class="n-domains" onClick="loadBrainMap(18);loadWordCloud(18)">18</button>
-                <button class="n-domains" onClick="loadBrainMap(19);loadWordCloud(19)">19</button>
-                <button class="n-domains" onClick="loadBrainMap(20);loadWordCloud(20)">20</button>
-                <button class="n-domains" onClick="loadBrainMap(21);loadWordCloud(21)">21</button>
-                <button class="n-domains" onClick="loadBrainMap(22);loadWordCloud(22)">22</button>
-                <button class="n-domains" onClick="loadBrainMap(23);loadWordCloud(23)">23</button>
-                <button class="n-domains" onClick="loadBrainMap(24);loadWordCloud(24)">24</button>
-                <button class="n-domains" onClick="loadBrainMap(25);loadWordCloud(25)">25</button>
-                <br/><br/>
-            </div>
-        </div>
+    <div id="button_container">
+        <input type="range" min="2" max="50" value="6" class="n_domain_slider" id="domain_slider" style="width: 420px"></input>
+         <input type="number" id="domain_slider_n" min="2" max="50" value="6"></input>
+        <br/><br/><br/>
     </div>
 
     <br/>
@@ -112,6 +86,32 @@
         <div id="chart23" class="subchart" style="left:386px;top:825px;"></div>
         <div id="chart24" class="subchart" style="left:579px;top:825px;"></div>
         <div id="chart25" class="subchart" style="left:0px;top:990px;"></div>
+        <div id="chart26" class="subchart" style="left:193px;top:990px;"></div>
+        <div id="chart27" class="subchart" style="left:386px;top:990px;"></div>
+        <div id="chart28" class="subchart" style="left:579px;top:990px;"></div>
+        <div id="chart29" class="subchart" style="left:0px;top:1155px;"></div>
+        <div id="chart30" class="subchart" style="left:193px;top:1155px;"></div>
+        <div id="chart31" class="subchart" style="left:386px;top:1155px;"></div>
+        <div id="chart32" class="subchart" style="left:579px;top:1155px;"></div>
+        <div id="chart33" class="subchart" style="left:0px;top:1320px;"></div>
+        <div id="chart34" class="subchart" style="left:193px;top:1320px;"></div>
+        <div id="chart35" class="subchart" style="left:386px;top:1320px;"></div>
+        <div id="chart36" class="subchart" style="left:579px;top:1320px;"></div>
+        <div id="chart37" class="subchart" style="left:0px;top:1485px;"></div>
+        <div id="chart38" class="subchart" style="left:193px;top:1485px;"></div>
+        <div id="chart39" class="subchart" style="left:386px;top:1485px;"></div>
+        <div id="chart40" class="subchart" style="left:579px;top:1485px;"></div>
+        <div id="chart41" class="subchart" style="left:0px;top:1650px;"></div>
+        <div id="chart42" class="subchart" style="left:193px;top:1650px;"></div>
+        <div id="chart43" class="subchart" style="left:386px;top:1650px;"></div>
+        <div id="chart44" class="subchart" style="left:579px;top:1650px;"></div>
+        <div id="chart45" class="subchart" style="left:0px;top:1815px;"></div>
+        <div id="chart46" class="subchart" style="left:193px;top:1815px;"></div>
+        <div id="chart47" class="subchart" style="left:386px;top:1815px;"></div>
+        <div id="chart48" class="subchart" style="left:579px;top:1815px;"></div>
+        <div id="chart49" class="subchart" style="left:0px;top:1980px;"></div>
+        <div id="chart50" class="subchart" style="left:193px;top:1980px;"></div>
+        
     </div>
     <div id="hierarchy"></div>
     <div id="footer">
@@ -125,5 +125,23 @@
 </div>
 
 </body>
+
+<script>
+    
+    var slider = document.getElementById("domain_slider");
+    var input = document.getElementById("domain_slider_n");
+    input.value = slider.value; 
+
+    // Update the input value each time you drag the slider handle
+    slider.oninput = function() {
+      input.value = this.value;
+    }
+
+    // Update the slider position each time you enter an input value
+    input.oninput = function() {
+      slider.value = this.value;
+    }
+
+</script>
 
 </html>

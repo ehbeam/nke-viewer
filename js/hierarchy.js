@@ -13,7 +13,7 @@ function loadHierarchy() {
         height = 680 - margin.top - margin.bottom,
         imsize = 24,
         font = "Avenir",
-        suffix = "_viewer";
+        suffix = "";
 
     var i = 0,
       duration = 750;
@@ -140,7 +140,7 @@ function loadHierarchy() {
 
       var words = nodeEnter.append("image")
           .attr("class", "word")
-          .attr("xlink:href", function(d) { return d.image + "_words" + suffix + ".png"; })
+          .attr("xlink:href", function(d) { return d.image + "_wordcloud" + suffix + ".png"; })
           .attr("x", imsize / 2)
           .attr("y", -1 * imsize / 1.75)
           .attr("width", imsize * 2.25);
@@ -159,7 +159,7 @@ function loadHierarchy() {
 
       words.select("image")
           .attr("class", "word")
-          .attr("xlink:href", function(d) { return d.image + "_words" + suffix + ".png"; })
+          .attr("xlink:href", function(d) { return d.image + "_wordcloud" + suffix + ".png"; })
           .attr("x", imsize - 15)
           .attr("y", -1 * imsize / 2.5)
           .attr("width", imsize * 2.5);

@@ -1,16 +1,8 @@
 // Adapted from https://bl.ocks.org/jyucsiro/767539a876836e920e38bc80d2031ba7
 
-var cloudPalette = ["#7597D0", "#B07EB6", "#CEBE6D", "#77B58A", "#CE7D69", 
-                    "#7D74A3", "#AEC87C", "#BA7E39", "#CF7593", "#846B43", 
-                    "#6F8099", "#8C4058", "#D8AE54", "#5AA8A7", "#3A3C7C", 
-                    "#FF7B5B", "#72662A", "#91E580", "#9AB4E2", "#E291DD",
-                    "#8B75EA", "#E0BD84", "#D64F7C", "#8ACEAF", "#C6CE5A"];
+var cloudPalette = ['#5B81BD', '#C16137', '#DCC447', '#924DA0', '#43A971', '#D19A17', '#48A4A8', '#CA4F52', '#D9DC77', '#D599DD', '#82B858', '#E8B586', '#7275B9', '#AA436A', '#AC835B', '#4268a4', '#a8481e', '#c3ab2e', '#793487', '#2a9058', '#b88100', '#2f8b8f', '#b13639', '#c0c35e', '#bc80c4', '#699f3f', '#cf9c6d', '#595ca0', '#912a51', '#936a42', '#749ad6', '#da7a50', '#f5dd60', '#ab66b9', '#5cc28a', '#eab330', '#61bdc1', '#e3686b', '#f2f590', '#eeb2f6', '#9bd171', '#ffce9f', '#8b8ed2', '#c35c83', '#c59c74', '#294f8b', '#8f2f50', '#aa9215', '#601b6e', '#11773f', '#9f6800', '#167276', '#981d20', '#a7aa45', '#a367ab', '#508626', '#b68354', '#404387', '#781138', '#7a5129'];
 
-var titlePalette = ["rgba(117, 151, 208, 0.5)", "rgba(176, 126, 182, 0.5)", "rgba(206, 190, 109, 0.5)", "rgba(119, 181, 138, 0.5)", "rgba(206, 125, 105, 0.5)", 
-                    "rgba(125, 116, 163, 0.5)", "rgba(174, 200, 124, 0.5)", "rgba(186, 126, 57, 0.5)", "rgba(207, 117, 147, 0.5)", "rgba(132, 107, 67, 0.5)", 
-                    "rgba(111, 128, 153, 0.5)", "rgba(140, 64, 88, 0.5)", "rgba(216, 174, 84, 0.5)", "rgba(90, 168, 167, 0.5)", "rgba(58, 60, 124, 0.5)", 
-                    "rgba(255, 123, 91, 0.5)", "rgba(114, 102, 42, 0.5)", "rgba(145, 229, 128, 0.5)", "rgba(188, 213, 255, 0.5)", "rgba(226, 145, 221, 0.5)",
-                    "rgba(139, 117, 234, 0.5)", "rgba(224, 189, 132, 0.5)", "rgba(214, 79, 124, 0.5)", "rgba(164, 234, 202, 0.5)", "rgba(244, 255, 107, 0.5)"];
+var titlePalette = ['rgba(91, 129, 189, 0.5)', 'rgba(193, 97, 55, 0.5)', 'rgba(220, 196, 71, 0.5)', 'rgba(146, 77, 160, 0.5)', 'rgba(67, 169, 113, 0.5)', 'rgba(209, 154, 23, 0.5)', 'rgba(72, 164, 168, 0.5)', 'rgba(202, 79, 82, 0.5)', 'rgba(217, 220, 119, 0.5)', 'rgba(213, 153, 221, 0.5)', 'rgba(130, 184, 88, 0.5)', 'rgba(232, 181, 134, 0.5)', 'rgba(114, 117, 185, 0.5)', 'rgba(170, 67, 106, 0.5)', 'rgba(172, 131, 91, 0.5)', 'rgba(66, 104, 164, 0.5)', 'rgba(168, 72, 30, 0.5)', 'rgba(195, 171, 46, 0.5)', 'rgba(121, 52, 135, 0.5)', 'rgba(42, 144, 88, 0.5)', 'rgba(184, 129, 0, 0.5)', 'rgba(47, 139, 143, 0.5)', 'rgba(177, 54, 57, 0.5)', 'rgba(192, 195, 94, 0.5)', 'rgba(188, 128, 196, 0.5)', 'rgba(105, 159, 63, 0.5)', 'rgba(207, 156, 109, 0.5)', 'rgba(89, 92, 160, 0.5)', 'rgba(145, 42, 81, 0.5)', 'rgba(147, 106, 66, 0.5)', 'rgba(116, 154, 214, 0.5)', 'rgba(218, 122, 80, 0.5)', 'rgba(245, 221, 96, 0.5)', 'rgba(171, 102, 185, 0.5)', 'rgba(92, 194, 138, 0.5)', 'rgba(234, 179, 48, 0.5)', 'rgba(97, 189, 193, 0.5)', 'rgba(227, 104, 107, 0.5)', 'rgba(242, 245, 144, 0.5)', 'rgba(238, 178, 246, 0.5)', 'rgba(155, 209, 113, 0.5)', 'rgba(255, 206, 159, 0.5)', 'rgba(139, 142, 210, 0.5)', 'rgba(195, 92, 131, 0.5)', 'rgba(197, 156, 116, 0.5)', 'rgba(41, 79, 139, 0.5)', 'rgba(143, 47, 80, 0.5)', 'rgba(170, 146, 21, 0.5)', 'rgba(96, 27, 110, 0.5)', 'rgba(17, 119, 63, 0.5)', 'rgba(159, 104, 0, 0.5)', 'rgba(22, 114, 118, 0.5)', 'rgba(152, 29, 32, 0.5)', 'rgba(167, 170, 69, 0.5)', 'rgba(163, 103, 171, 0.5)', 'rgba(80, 134, 38, 0.5)', 'rgba(182, 131, 84, 0.5)', 'rgba(64, 67, 135, 0.5)', 'rgba(120, 17, 56, 0.5)', 'rgba(122, 81, 41, 0.5)']
 
 function pad(number) { return (number < 10 ? "0" : "") + number };
 
@@ -24,8 +16,62 @@ function toTitleCase(str) {
 
 function loadWordCloud(n_domains) {
 
-    document.getElementById("chart").innerHTML = "<div id='chart1' class='subchart' style='left:0px;top:0px;'></div><div id='chart2' class='subchart' style='left:193px;top:0px;'></div><div id='chart3' class='subchart' style='left:386px;top:0px;'></div><div id='chart4' class='subchart' style='left:579px;top:0px;'></div><div id='chart5' class='subchart' style='left:0px;top:165px;'></div><div id='chart6' class='subchart' style='left:193px;top:165px;'></div><div id='chart7' class='subchart' style='left:386px;top:165px;'></div><div id='chart8' class='subchart' style='left:579px;top:165px;'></div><div id='chart9' class='subchart' style='left:0px;top:330px;'></div><div id='chart10' class='subchart' style='left:193px;top:330px;'></div><div id='chart11' class='subchart' style='left:386px;top:330px;'></div><div id='chart12' class='subchart' style='left:579px;top:330px;'></div><div id='chart13' class='subchart' style='left:0px;top:495px;'></div><div id='chart14' class='subchart' style='left:193px;top:495px;'></div><div id='chart15' class='subchart' style='left:386px;top:495px;'></div><div id='chart16' class='subchart' style='left:579px;top:495px;'></div><div id='chart17' class='subchart' style='left:0px;top:660px;'></div><div id='chart18' class='subchart' style='left:193px;top:660px;'></div><div id='chart19' class='subchart' style='left:386px;top:660px;'></div><div id='chart20' class='subchart' style='left:579px;top:660px;'></div><div id='chart21' class='subchart' style='left:0px;top:825px;'></div><div id='chart22' class='subchart' style='left:193px;top:825px;'></div><div id='chart23' class='subchart' style='left:386px;top:825px;'></div><div id='chart24' class='subchart' style='left:579px;top:825px;'></div><div id='chart25' class='subchart' style='left:0px;top:990px;'></div>"
-    
+    var subcharts = [
+                      "<div id='chart1' class='subchart' style='left:0px;top:0px;display:block;'></div>",
+                      "<div id='chart2' class='subchart' style='left:193px;top:0px;display:block;'></div>",
+                      "<div id='chart3' class='subchart' style='left:386px;top:0px;display:block;'></div>",
+                      "<div id='chart4' class='subchart' style='left:579px;top:0px;display:block;'></div>",
+                      "<div id='chart5' class='subchart' style='left:0px;top:165px;display:block;'></div>",
+                      "<div id='chart6' class='subchart' style='left:193px;top:165px;display:block;'></div>",
+                      "<div id='chart7' class='subchart' style='left:386px;top:165px;display:block;'></div>",
+                      "<div id='chart8' class='subchart' style='left:579px;top:165px;display:block;'></div>",
+                      "<div id='chart9' class='subchart' style='left:0px;top:330px;display:block;'></div>",
+                      "<div id='chart10' class='subchart' style='left:193px;top:330px;display:block;'></div>",
+                      "<div id='chart11' class='subchart' style='left:386px;top:330px;display:block;'></div>",
+                      "<div id='chart12' class='subchart' style='left:579px;top:330px;display:block;'></div>",
+                      "<div id='chart13' class='subchart' style='left:0px;top:495px;display:block;'></div>",
+                      "<div id='chart14' class='subchart' style='left:193px;top:495px;display:block;'></div>",
+                      "<div id='chart15' class='subchart' style='left:386px;top:495px;display:block;'></div>",
+                      "<div id='chart16' class='subchart' style='left:579px;top:495px;display:block;'></div>",
+                      "<div id='chart17' class='subchart' style='left:0px;top:660px;display:block;'></div>",
+                      "<div id='chart18' class='subchart' style='left:193px;top:660px;display:block;'></div>",
+                      "<div id='chart19' class='subchart' style='left:386px;top:660px;display:block;'></div>",
+                      "<div id='chart20' class='subchart' style='left:579px;top:660px;display:block;'></div>",
+                      "<div id='chart21' class='subchart' style='left:0px;top:825px;display:block;'></div>",
+                      "<div id='chart22' class='subchart' style='left:193px;top:825px;display:block;'></div>",
+                      "<div id='chart23' class='subchart' style='left:386px;top:825px;display:block;'></div>",
+                      "<div id='chart24' class='subchart' style='left:579px;top:825px;display:block;'></div>",
+                      "<div id='chart25' class='subchart' style='left:0px;top:990px;display:block;'></div>",
+                      "<div id='chart26' class='subchart' style='left:193px;top:990px;display:block;'></div>",
+                      "<div id='chart27' class='subchart' style='left:386px;top:990px;display:block;'></div>",
+                      "<div id='chart28' class='subchart' style='left:579px;top:990px;display:block;'></div>",
+                      "<div id='chart29' class='subchart' style='left:0px;top:1155px;display:block;'></div>",
+                      "<div id='chart30' class='subchart' style='left:193px;top:1155px;display:block;'></div>",
+                      "<div id='chart31' class='subchart' style='left:386px;top:1155px;display:block;'></div>",
+                      "<div id='chart32' class='subchart' style='left:579px;top:1155px;display:block;'></div>",
+                      "<div id='chart33' class='subchart' style='left:0px;top:1320px;display:block;'></div>",
+                      "<div id='chart34' class='subchart' style='left:193px;top:1320px;display:block;'></div>",
+                      "<div id='chart35' class='subchart' style='left:386px;top:1320px;display:block;'></div>",
+                      "<div id='chart36' class='subchart' style='left:579px;top:1320px;display:block;'></div>",
+                      "<div id='chart37' class='subchart' style='left:0px;top:1485px;display:block;'></div>",
+                      "<div id='chart38' class='subchart' style='left:193px;top:1485px;display:block;'></div>",
+                      "<div id='chart39' class='subchart' style='left:386px;top:1485px;display:block;'></div>",
+                      "<div id='chart40' class='subchart' style='left:579px;top:1485px;display:block;'></div>",
+                      "<div id='chart41' class='subchart' style='left:0px;top:1650px;display:block;'></div>",
+                      "<div id='chart42' class='subchart' style='left:193px;top:1650px;display:block;'></div>",
+                      "<div id='chart43' class='subchart' style='left:386px;top:1650px;display:block;'></div>",
+                      "<div id='chart44' class='subchart' style='left:579px;top:1650px;display:block;'></div>",
+                      "<div id='chart45' class='subchart' style='left:0px;top:1815px;display:block;'></div>",
+                      "<div id='chart46' class='subchart' style='left:193px;top:1815px;display:block;'></div>",
+                      "<div id='chart47' class='subchart' style='left:386px;top:1815px;display:block;'></div>",
+                      "<div id='chart48' class='subchart' style='left:579px;top:1815px;display:block;'></div>",
+                      "<div id='chart49' class='subchart' style='left:0px;top:1980px;display:block;'></div>",
+                      "<div id='chart50' class='subchart' style='left:193px;top:1980px;display:block;'></div>"
+                    ];
+
+    var subchart_innerHTML = subcharts.slice(0, n_domains).join("");
+    document.getElementById("chart").innerHTML = subchart_innerHTML;
+
     var file = "data/k" + pad(n_domains) + "/words_k" + pad(n_domains) + ".csv";
 
     d3.csv(file, function(data) {
@@ -41,7 +87,8 @@ function loadWordCloud(n_domains) {
               for (var word_i = 0; word_i < count; word_i++) {
                 domain_words.push(term);
               }
-              var name = toTitleCase(data[row_i]["DOMAIN"].replace(/_/g, " "));
+              var name = data[row_i]["DOMAIN"].replace(/_/g, " ");
+              // var name = toTitleCase(data[row_i]["DOMAIN"].replace(/_/g, " "));
               // var name = data[row_i]["DOMAIN"].replace(/_/g, " ").toLowerCase();
             }
         };
@@ -118,11 +165,12 @@ function drawWordCloud(words, name, i){
       .style("padding-left", "8px")
       .style("padding-right", "8px")
       .style("border-radius", "5px")
-      .style("opacity", "0.65");
+      .style("opacity", "0.65")
       // .style("box-shadow", "2px 2px 3px #757575");
 
     // Draw the word cloud
     d3.select(svg_location).insert("svg")
+        .attr("class", "d3_wordcloud")
         .attr("width", width)
         .attr("height", height + 35)
       .append("g")
@@ -156,7 +204,7 @@ function drawWordCloud(words, name, i){
               .style("fill", color);
           return tooltip.style("visibility", "hidden")
         });
-
+    
     // Add the plot title
     d3.select(svg_location).insert("text")
       .style("font-size", "12px")
@@ -187,6 +235,5 @@ function drawWordCloud(words, name, i){
     }
 
     d3.layout.cloud().stop();
-    console.log(document.getElementById("chart"))
 
 }

@@ -1,3 +1,7 @@
+*:focus {
+    outline: none;
+}
+
 body {
     font-family: Avenir;
     margin: 10px auto 0px auto;
@@ -18,7 +22,7 @@ a:hover {
     cursor: pointer;
     outline: none;
     text-decoration: none;
-    color: black;
+    color: #3b3b3b;
     font-style: normal;
 }
 
@@ -47,31 +51,31 @@ button {
 }
 
 button:hover {
-    background: #1a1a1a;
+    background: #3b3b3b;
     outline: none;
 }
 
 button:focus {
-    background: #1a1a1a;
+    background: #3b3b3b;
     outline: none;
 }
 
-.view-button {
-  width: 330px;
+.view_button {
+  width: 331px;
   margin: 6px;
   margin-top: 8px;
   display: inline;
 }
 
-.view-button:hover {
-  background: #1a1a1a;
+.view_button:hover {
+  background: #3b3b3b;
 }
 
-.view-button:focus {
-  background: #1a1a1a;
+.view_button:focus {
+  background: #3b3b3b;
 }
 
-.n-domains {
+.n_domains {
   font-size: 9px;
   width: 18px;
   height: 16px;
@@ -93,9 +97,75 @@ button:focus {
   background: black;
 }
 
-*:focus {
-    outline: none;
+#button_container {
+  display: inline-block;
+  margin-left: 233px;
 }
+
+.n_domain_slider {
+  display: inline-block;
+  -webkit-appearance: none;
+  height: 22px;
+  border-radius: 5px;  
+  background: #bababa;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-top: 6px;
+  margin-right: 0px;
+  cursor: pointer;
+}
+
+.n_domain_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px; 
+  background: #4f4f4f;
+  cursor: grab;
+}
+
+.n_domain_slider::-webkit-slider-thumb:hover {
+  background: #3b3b3b;
+}
+
+.n_domain_slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background: gray;
+  cursor: grab;
+}
+
+.n_domain_slider::-moz-range-thumb:hover {
+  background: #3b3b3b;
+}
+
+#domain_slider_n {
+  font-size: 12px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  padding: 2px;
+  width: 45px;
+  height: 23px;
+  text-align: center;
+  background: white;
+  border: 2px solid #bababa;
+  border-radius: 5px;
+  margin-top: -23px;
+  margin-left: 432px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+  opacity: 1;
+  cursor: pointer;
+  margin: 0;
+}
+
 
 #page_container {
     width: 1050px; 
@@ -166,12 +236,6 @@ button:focus {
     margin-left: 940px;
 }
 
-#button_container {
-    width: 1050px;
-    margin-left: 35px;
-    margin-right: 35px;
-}
-
 #chart {
     display: block;
     width: 772px;
@@ -184,7 +248,7 @@ button:focus {
 }
 
 .subchart {
-    display: block;
+    display: none;
     width: 193px;
     height: 130px;
     padding: 0px;
@@ -245,13 +309,13 @@ canvas {
 
 .nav-slider-vertical {
   height: 220px;
-  margin-left: 12px;
+  margin-left: 10px;
   margin-right: 12px;
 }
 
 .nav-slider-horizontal {
   width: 264px;
-  margin-top: 13px;
+  margin-top: 10px;
 }
 
 #viewer_panel {
@@ -283,7 +347,7 @@ canvas {
 #opacity_panel {
     font-size: 14px;
     clear: left;
-    width: 215px;
+    width: 220px;
     margin-left: 0px;
     margin-top: 0px;
     float: left;
@@ -296,19 +360,17 @@ canvas {
 
 #value_panel {
     display: inline-block;
-    width: 197px;
+    width: 198px;
     height: 45px;
     margin-top: -2px;
     margin-bottom: 100px;
     margin-left: -17px;
     padding: 2px;
-    padding-top: 3px;
+    padding-top: 2px;
     background: white;
     text-align: left;
     border-radius: 5px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    border: 2px solid #bababa;
     cursor: default;
 }
 
@@ -374,7 +436,7 @@ canvas {
     margin-bottom: 50px;
     float: left;
     font: 12px;
-    border-color: black;
+    border: 2px solid #bababa;
 }
 
 .data_display_row {
@@ -384,14 +446,14 @@ canvas {
 
 ul#layer_list li {
     border-width: 1px 1px 1px 1px;
-    height: 32px;
+    height: 35px;
     border-style: solid;
-    border-color: black;
+    border: 2px solid #bababa;
     border-radius: 5px;
     font-size: 12px;
     background: white;
     padding: 2px;
-    width: 197px;
+    width: 198px;
     margin-top: 5px;
     margin-left: 10px;
     float: left;
@@ -429,7 +491,7 @@ ul#layer_list {
 .slider {
     background: white;
     color: gray;
-    border-color: black;
+    border: 2px solid #ababab;
     /*box-shadow: 3px 3px 2px gray;*/
     cursor: pointer;
 }
@@ -446,7 +508,6 @@ ul#layer_list {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
-  pointer-events: none;
 }
 
 /* Position tooltip above the element */
@@ -473,10 +534,10 @@ ul#layer_list {
 [data-tooltip]:after {
   position: absolute;
   top: 41px;
-  margin-left: 23px;
+  margin-left: 24px;
   width: 0;
-  border-top: 8px solid #BABABA;
-  border-top: 8px solid #BABABA;
+  border-top: 8px solid #bababa;
+  border-top: 8px solid #bababa;
   border-right: 8px solid transparent;
   border-left: 8px solid transparent;
   content: " ";
