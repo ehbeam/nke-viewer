@@ -232,7 +232,7 @@ input[type=number]::-webkit-outer-spin-button {
 #footer {
     position: relative;
     margin-top: 255px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     margin-left: 940px;
 }
 
@@ -244,8 +244,8 @@ input[type=number]::-webkit-outer-spin-button {
     top: 455px;
     margin-top: -10px;
     margin-left: 55px;
-    /*margin-left: 247px;*/
     margin-right: 25px;
+    margin-bottom: 30px;
     cursor: default;
 }
 
