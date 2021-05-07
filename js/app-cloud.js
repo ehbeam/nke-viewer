@@ -1,4 +1,4 @@
-// Adapted from https://bl.ocks.org/jyucsiro/767539a876836e920e38bc80d2031ba7
+// Adapted https://www.d3-graph-gallery.com/graph/wordcloud_basic.html
 
 var cloudPalette = ['#5B81BD', '#C16137', '#DCC447', '#924DA0', '#43A971', '#D19A17', '#48A4A8', '#CA4F52', '#D9DC77', '#D599DD', '#82B858', '#E8B586', '#7275B9', '#AA436A', '#AC835B', '#4268a4', '#a8481e', '#c3ab2e', '#793487', '#2a9058', '#cc9512', '#2f8b8f', '#b13639', '#c0c35e', '#bc80c4', '#699f3f', '#cf9c6d', '#595ca0', '#912a51', '#936a42', '#749ad6', '#da7a50', '#f5dd60', '#ab66b9', '#5cc28a', '#eab330', '#61bdc1', '#e3686b', '#f2f590', '#eeb2f6', '#9bd171', '#ffce9f', '#8b8ed2', '#c35c83', '#c59c74', '#294f8b', '#b7572d', '#aa9215', '#601b6e', '#11773f', '#cc9512', '#167276', '#981d20', '#a7aa45', '#a367ab', '#508626', '#b68354', '#404387', '#781138', '#7a5129'];
 
