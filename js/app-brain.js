@@ -65,11 +65,11 @@ function loadDomains() {
 
     var n_domains = document.getElementById("domain_slider_n").value;
 
+        if (n_domains > 0) {
+                loadWordCloud(n_domains);
+            }
+
     loadBrainMap(n_domains);
-    
-    if (n_domains > 0) {
-        loadWordCloud(n_domains);
-    }
 };
 
 function loadBrainMap(k) {

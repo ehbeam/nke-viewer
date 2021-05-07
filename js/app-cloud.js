@@ -88,38 +88,43 @@ function loadWordCloud(n_domains) {
                 domain_words.push(term);
               }
               var name = data[row_i]["DOMAIN"].replace(/_/g, " ");
-              // var name = toTitleCase(data[row_i]["DOMAIN"].replace(/_/g, " "));
-              // var name = data[row_i]["DOMAIN"].replace(/_/g, " ").toLowerCase();
             }
         };
-    
+
         drawWordCloud(domain_words, name, domain_i);
 
       };
   });
-
 }
 
-// Function to move select to front
-// https://github.com/wbkd/d3-extended
-d3.selection.prototype.moveToFront = function() {  
-  return this.each(function(){
-    this.parentNode.appendChild(this);
-  });
-};
-
-function drawWordCloud(words, name, i){
+function drawWordCloud(domain_words, name, i) {
 
   var svg_location = "#chart" + (i+1);
+  var margin = {top: 25, right: 5, bottom: 25, left: 5};
   var width = 193, height = 130;
   var color = cloudPalette[i];
   var titleColor = titlePalette[i];
   var word_count = {};
 
-  if (words.length == 1){
-      word_count[words[0]] = 1;
+  // Define the tooltip
+  var tooltip = d3.select("body")
+    .append("div")
+    .style("position", "absolute")
+    .style("z-index", "10")
+    .style("visibility", "hidden")
+    .style("font-size", "12px")
+    .style("color", "white")
+    .style("background", "black")
+    .style("padding", "2px")
+    .style("padding-left", "8px")
+    .style("padding-right", "8px")
+    .style("border-radius", "5px")
+    .style("opacity", "0.65")
+
+  if (domain_words.length == 1){
+      word_count[domain_words[0]] = 1;
     } else {
-      words.forEach(function(word){
+      domain_words.forEach(function(word){
         var word = word.toLowerCase();
         if (word != "" && word.length>1){
           if (word_count[word]){
@@ -130,83 +135,65 @@ function drawWordCloud(words, name, i){
         }
       })
     }
-
   var word_entries = d3.entries(word_count);
-
-  var xScale = d3.scale.linear()
-     .domain([0, d3.max(word_entries, function(d) {
+  var unique_words = domain_words.filter((item, j, ar) => ar.indexOf(item) === j);
+  const wordScale = d3.scaleLinear()
+    .domain([0, d3.max(word_entries, function(d) {
         return d.value;
       })
      ])
-     .range([1,14]);
+    .range([1,14])
+  console.log(wordScale)
 
-  d3.layout.cloud().size([width, height])
-    .timeInterval(25)
-    .words(word_entries)
-    .fontSize(function(d) { return xScale(+d.value); })
-    .text(function(d) { return d.key; })
-    .rotate(function() { return ~~(Math.random() * 2) * 90; })
-    .font("Avenir")
-    .on("end", draw)
-    .start();
+  var svg_cloud = d3.select(svg_location).append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")")
+
+  var layout = d3.layout.cloud()
+    .size([width - margin.left, height - margin.top])
+    .words(unique_words.map(function(d) { return {text: d}; }))
+    .padding(0.5)
+    .fontSize(function(d) { return wordScale(word_count[d.text]) })
+    .on("end", draw);
+  layout.start();
 
   function draw(words) {
-
-    // Define the tooltip
-    var tooltip = d3.select("body")
-      .append("div")
-      .style("position", "absolute")
-      .style("z-index", "10")
-      .style("visibility", "hidden")
-      .style("font-size", "12px")
-      .style("color", "white")
-      .style("background", "black")
-      .style("padding", "2px")
-      .style("padding-left", "8px")
-      .style("padding-right", "8px")
-      .style("border-radius", "5px")
-      .style("opacity", "0.65")
-      // .style("box-shadow", "2px 2px 3px #757575");
-
-    // Draw the word cloud
-    d3.select(svg_location).insert("svg")
-        .attr("class", "d3_wordcloud")
-        .attr("width", width)
-        .attr("height", height + 35)
+    svg_cloud
       .append("g")
-        .attr("transform", "translate(" + [width >> 1, height >> 1] + ")")
-      .selectAll("text")
-        .data(words)
-      .enter().append("text")
-        .style("font-size", function(d) { return xScale(d.value) + "px"; })
-        .style("font-family", "Avenir")
-        .style("fill", color)
-        // .style("text-shadow", "2px 2px 3px #CECECE")
-        .style("margin-bottom", "5px")
-        .attr("text-anchor", "middle")
-        .attr("transform", function(d) {
-          return "translate(" + [d.x, d.y + 25] + ")rotate(" + d.rotate + ")";
-        })
-        .text(function(d) { return d.key; })
-        .on("mouseover", function(d, i) {
-          d3.select(this)
-              .style("font-size", function(d) { return xScale(d.value) + 3 + "px"; })
-              .style("fill", "black")
-              .moveToFront();
-          tooltip.html("<i>r<sub>pb</sub></i> = " + d.value / 1000)
-              .style("left", d3.event.pageX + 10 + "px")
-              .style("top", d3.event.pageY + 10 + "px");
-          return tooltip.style("visibility", "visible")
-        })
-        .on("mouseout", function(d, i) {
-          d3.select(this)
-              .style("font-size", function(d) { return xScale(d.value) + "px"; })
-              .style("fill", color);
-          return tooltip.style("visibility", "hidden")
-        });
-    
-    // Add the plot title
-    d3.select(svg_location).insert("text")
+        .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+        .selectAll("text")
+          .data(words)
+        .enter().append("text")
+          .style("font-size", function(d) { return d.size + "px"; })
+          .attr("fill", color)
+          .attr("text-anchor", "middle")
+          .attr("transform", function(d) {
+            return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+          })
+          .text(function(d) { return d.text; })
+          .on("mouseover", function(d, i) {
+            d3.select(this)
+                .style("font-size", function(d) { return Math.max(d.size + 3, 12) + "px"; })
+                .style("fill", "black")
+                .style("font-weight", "bold")
+            tooltip.html("<i>r<sub>pb</sub></i> = " + word_count[this.innerHTML] / 1000 )
+                .style("left", d3.event.pageX + 20 + "px")
+                .style("top", d3.event.pageY + 20 + "px");
+            return tooltip.style("visibility", "visible")
+          })
+          .on("mouseout", function(d, i) {
+            d3.select(this)
+                .style("font-size", function(d) { return d.size + "px"; })
+                .style("fill", color)
+                .style("font-weight", "normal");
+            return tooltip.style("visibility", "hidden")
+          });
+    }
+
+  d3.select(svg_location).insert("text")
       .style("font-size", "12px")
       .style("font-family", "Avenir")
       .style("text-align", "center")
@@ -219,6 +206,7 @@ function drawWordCloud(words, name, i){
       .style("height", "22px")
       .style("width", width - 8 + "px")
       .style("margin-left", -1 * (width - 4) + "px")
+      .style("margin-top", -7 + "px")
       .text(" ");
 
     d3.select(svg_location).insert("text")
@@ -231,9 +219,6 @@ function drawWordCloud(words, name, i){
       .style("position", "absolute")
       .style("width", width - 8 + "px")
       .style("margin-left", -1 * (width - 4) + "px")
+      .style("margin-top", -7 + "px")
       .text(name);
-    }
-
-    d3.layout.cloud().stop();
-
 }

@@ -241,8 +241,10 @@ input[type=number]::-webkit-outer-spin-button {
     width: 772px;
     padding: 0px;
     position: absolute;
-    top: 425px;
+    top: 455px;
+    margin-top: -10px;
     margin-left: 55px;
+    /*margin-left: 247px;*/
     margin-right: 25px;
     cursor: default;
 }
@@ -556,8 +558,10 @@ ul#layer_list {
 }
 
 #hierarchy {
-  margin-top: -200px;
+  margin-top: -300px;
   margin-bottom: -200px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .node {
