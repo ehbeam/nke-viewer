@@ -119,7 +119,7 @@ function drawWordCloud(domain_words, name, i) {
     .style("padding-left", "8px")
     .style("padding-right", "8px")
     .style("border-radius", "5px")
-    .style("opacity", "0.65")
+    .style("opacity", "0.7")
 
   if (domain_words.length == 1){
       word_count[domain_words[0]] = 1;
@@ -156,6 +156,7 @@ function drawWordCloud(domain_words, name, i) {
     .size([width - margin.left, height - margin.top])
     .words(unique_words.map(function(d) { return {text: d}; }))
     .padding(0.5)
+    .rotate(0)
     .fontSize(function(d) { return wordScale(word_count[d.text]) })
     .on("end", draw);
   layout.start();
@@ -163,7 +164,7 @@ function drawWordCloud(domain_words, name, i) {
   function draw(words) {
     svg_cloud
       .append("g")
-        .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+        .attr("transform", "translate(" + layout.size()[0] / 2 + "," + 48 + ")")
         .selectAll("text")
           .data(words)
         .enter().append("text")
@@ -175,7 +176,7 @@ function drawWordCloud(domain_words, name, i) {
           })
           .text(function(d) { return d.text; })
           .on("mouseover", function(d, i) {
-            d3.select(this)
+            d3.select(this).raise()
                 .style("font-size", function(d) { return Math.max(d.size + 3, 12) + "px"; })
                 .style("fill", "black")
                 .style("font-weight", "bold")
